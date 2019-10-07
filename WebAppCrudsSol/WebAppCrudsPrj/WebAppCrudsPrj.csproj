@@ -84,6 +84,7 @@
     <Content Include="WebFormCRUDProdutosNew.aspx" />
     <Content Include="WebFormLogin.aspx" />
     <Content Include="WebFormMenu.aspx" />
+    <Content Include="WebFormVenda.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DALClassClientes.cs" />
@@ -202,6 +203,13 @@
     </Compile>
     <Compile Include="WebFormMenu.aspx.designer.cs">
       <DependentUpon>WebFormMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormVenda.aspx.cs">
+      <DependentUpon>WebFormVenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormVenda.aspx.designer.cs">
+      <DependentUpon>WebFormVenda.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
