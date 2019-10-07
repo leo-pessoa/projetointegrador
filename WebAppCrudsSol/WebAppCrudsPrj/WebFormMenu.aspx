@@ -11,7 +11,7 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      
+    <div class="content">
     <asp:Label ID="LabelBoasVindas" runat="server" ForeColor="White"></asp:Label>
-
+    </div>
 </asp:Content>

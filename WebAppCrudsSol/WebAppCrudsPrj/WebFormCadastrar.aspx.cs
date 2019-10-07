@@ -38,21 +38,21 @@ namespace WebAppCrudsPrj
             Response.Redirect("~\\WebFormCadastrar.aspx");
         }
 
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            if (e.CommandName == "Excluir")
-            {
-                int codigo;
+        //protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        //{
+        //    if (e.CommandName == "Excluir")
+        //    {
+        //        int codigo;
 
-                int index = Convert.ToInt32(e.CommandArgument);
+        //        int index = Convert.ToInt32(e.CommandArgument);
 
-                codigo = Convert.ToInt32(GridView1.Rows[index].Cells[0].Text);
+        //        codigo = Convert.ToInt32(GridView1.Rows[index].Cells[0].Text);
 
-                DAL.DALClassUsuarios aDALClassUsuarios = new DAL.DALClassUsuarios();
-                aDALClassUsuarios.Delete(codigo);
+        //        DAL.DALClassUsuarios aDALClassUsuarios = new DAL.DALClassUsuarios();
+        //        aDALClassUsuarios.Delete(codigo);
 
-                Response.Redirect("~\\WebFormCadastrar.aspx");
-            }
-        }
+        //        Response.Redirect("~\\WebFormCadastrar.aspx");
+        //    }
+        //}
     }
 }
