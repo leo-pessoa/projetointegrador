@@ -4,7 +4,7 @@
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="head" runat="server">
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </asp:Content>
 
@@ -24,9 +24,9 @@
                     <asp:BoundField DataField="telefone" HeaderText="Telefone" SortExpression="telefone" />
                     <asp:TemplateField HeaderText="Produto Fornecido" SortExpression="produto_fornecido">
                         <EditItemTemplate>
-                            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="id" DataValueField="id" SelectedValue='<%# Bind("produto_fornecido") %>'>
+                            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="nome" DataValueField="id" SelectedValue='<%# Bind("produto_fornecido") %>'>
                             </asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SGEDConnectionString %>" SelectCommand="SELECT [id] FROM [Produtos]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SGEDConnectionString %>" SelectCommand="SELECT [id], [nome] FROM [Produtos]"></asp:SqlDataSource>
                         </EditItemTemplate>
                         <InsertItemTemplate>
                             <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("produto_fornecido") %>'></asp:TextBox>

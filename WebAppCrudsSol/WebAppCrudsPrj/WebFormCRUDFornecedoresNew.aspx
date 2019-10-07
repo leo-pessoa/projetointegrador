@@ -28,11 +28,20 @@
                 <asp:TextBox ID="TextBoxTelefone" runat="server"></asp:TextBox>
 
               <label for="produto_fornecido"><b>Produto Fornecido </b></label>
-                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="id" DataValueField="id"></asp:DropDownList>
+                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="nome" DataValueField="id" >
+                </asp:DropDownList>
       
       
   
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SGEDConnectionString %>" SelectCommand= "SELECT [id] FROM [Produtos]"></asp:SqlDataSource>
+                
+      
+      
+  
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SGEDConnectionString %>" SelectCommand="SELECT [id], [nome] FROM [Produtos]"></asp:SqlDataSource>
+      
+      
+  
+                
       
       
   
