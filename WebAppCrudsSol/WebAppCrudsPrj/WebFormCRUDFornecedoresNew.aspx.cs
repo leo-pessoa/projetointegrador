@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebAppCruds
+{
+    public partial class WebFormCRUDFornecedoresNew : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if ((Session["log_in"] == null))
+            {
+                Response.Redirect("WebFormLogin.aspx");
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Modelo.Fornecedores iFornecedores;
+            DAL.DALClassFornecedores iDALClassFornecedores;
+
+
+            iFornecedores = new Modelo.Fornecedores(int.Parse(TextBoxId.Text), TextBoxNome.Text, TextBoxEmail.Text, TextBoxTelefone.Text, int.Parse(DropDownList1.Text));
+
+
+            iDALClassFornecedores = new DAL.DALClassFornecedores();
+
+
+            iDALClassFornecedores.Insert(iFornecedores);
+
+
+            Response.Redirect("~\\WebFormCRUDFornecedores.aspx");
+        }
+    }
+}
