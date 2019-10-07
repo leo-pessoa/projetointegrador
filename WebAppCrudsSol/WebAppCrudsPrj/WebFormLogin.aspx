@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormLogin.aspx.cs" Inherits="WebAppCrudsPrj.WebFormLogin" Theme="Tema1" MasterPageFile="~/Mestre.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormLogin.aspx.cs" Inherits="WebAppCrudsPrj.WebFormLogin" Theme="Tema1" MasterPageFile="~/MestreDois.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
