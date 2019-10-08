@@ -20,11 +20,6 @@ a.button2 {
         border-color: #DDDDDD;
     }
 
-    a.button2:active {
-        color: #BBBBBB;
-        border-color: #BBBBBB;
-    }
-
 @media all and (max-width:30em) {
      a.button2 {
         display: block;
