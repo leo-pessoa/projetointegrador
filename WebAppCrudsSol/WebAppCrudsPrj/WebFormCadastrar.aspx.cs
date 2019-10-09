@@ -36,23 +36,9 @@ namespace WebAppCrudsPrj
             Modelo.Usuarios aUsuario = new Modelo.Usuarios(int.Parse(TextBoxId.Text), TextBoxNome.Text, TextBoxLogin.Text, TextBoxSenha.Text, TextBoxPerfil.Text);
             aDALClassUsuarios.Insert(aUsuario);
             Response.Redirect("~\\WebFormCadastrar.aspx");
+
         }
 
-        //protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
-        //{
-        //    if (e.CommandName == "Excluir")
-        //    {
-        //        int codigo;
-
-        //        int index = Convert.ToInt32(e.CommandArgument);
-
-        //        codigo = Convert.ToInt32(GridView1.Rows[index].Cells[0].Text);
-
-        //        DAL.DALClassUsuarios aDALClassUsuarios = new DAL.DALClassUsuarios();
-        //        aDALClassUsuarios.Delete(codigo);
-
-        //        Response.Redirect("~\\WebFormCadastrar.aspx");
-        //    }
-        //}
+        
     }
 }
