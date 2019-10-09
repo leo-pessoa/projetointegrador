@@ -13,5 +13,10 @@ namespace WebAppCrudsPrj
         {
 
         }
+
+        protected void ButtonCa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div class="container">
+    <div class="container">
     <h1>Nova Venda</h1>
     <p>Preencha todos os campos</p>
           <label for="cliente"><b>Cliente</b></label>
