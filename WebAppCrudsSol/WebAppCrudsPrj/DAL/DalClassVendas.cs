@@ -28,11 +28,13 @@ namespace WebAppCrudsPrj.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Venda (id, verif_pago, data_venda) VALUES(@id, @verif_pago, @data_venda)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Venda (id, verif_pago, data_venda, usuario_id) VALUES(@id, @verif_pago, @data_venda, @usuario_id)", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@verif_pago", obj.pago);
             cmd.Parameters.AddWithValue("@data_venda", obj.data);
- 
+            cmd.Parameters.AddWithValue("@usuario_id", obj.usuario_id);
+
+
 
             // Executa Comando
             cmd.ExecuteNonQuery();
@@ -58,7 +60,8 @@ namespace WebAppCrudsPrj.DAL
                     aVenda = new Modelo.Venda(
                         Convert.ToInt32(dr["id"].ToString()),
                         dr["verif_pago"].ToString(),
-                        Convert.ToDateTime(dr["data_venda"])
+                        Convert.ToDateTime(dr["data_venda"]),
+                        Convert.ToInt32(dr["usuario_id"].ToString())
                         );
                     aListVenda.Add(aVenda);
                 }
@@ -87,7 +90,8 @@ namespace WebAppCrudsPrj.DAL
                     aVenda = new Modelo.Venda(
                         Convert.ToInt32(dr["id"].ToString()),
                         dr["verif_pago"].ToString(),
-                        Convert.ToDateTime(dr["data_venda"])
+                        Convert.ToDateTime(dr["data_venda"]),
+                        Convert.ToInt32(dr["usuario_id"].ToString())
                         );
                     aListVenda.Add(aVenda);
                 }
