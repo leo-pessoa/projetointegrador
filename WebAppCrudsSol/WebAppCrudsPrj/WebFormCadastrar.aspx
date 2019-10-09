@@ -5,6 +5,44 @@
     <link href="CSS/gridcss.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+
+  <%--  <script language="javascript" type="text/javascript">
+        function validate() 
+        {   //nome
+            if (document.getElementById("<%=TextBoxNome.ClientID%>").value == "")
+            {
+                alert("Informe o nome.");
+                document.getElementById("<%=TextBoxNome.ClientID%>").focus();
+                return false;
+            }
+            //Alfanumerico e espaço(' '),nao aceita numeros e nem caracteres especiais min 5 e max 45 caracteres. 
+            var ck_nome = /^[A-Za-z ]{5,45}$/;
+            var tempNome = document.getElementById("<%=TextBoxNome.ClientID%>").value;
+            var matchNome = tempNome.match(ck_nome);
+            if (matchNome == null) {
+                alert("Nome inválido : Não informe números,  ");
+                document.getElementById("<%=TextBoxNome.ClientID %>").focus();
+                return false;
+            }
+            //Email
+            if (document.getElementById("<%=TextBoxLogin.ClientID %>").value == "") 
+            {
+                alert("O Email não pode estar vazio");
+                document.getElementById("<%=TextBoxLogin.ClientID %>").focus();
+                return false;
+            }
+            var emailPat = /^(\".*\"|[A-Za-z]\w*)@(\[\d{1,3}(\.\d{1,3}){3}]|[A-Za-z]\w*(\.[A-Za-z]\w*)+)$/;
+            var emailid = document.getElementById("<%=TextBoxLogin.ClientID %>").value;
+            var matchArray = emailid.match(emailPat);
+            if (matchArray == null) {
+                alert("O Email esta no formato incorreto. Tente novamente.");
+                document.getElementById("<%=TextBoxLogin.ClientID %>").focus();
+                return false;
+            }
+          
+        }
+</script> --%>
+
 </asp:Content>
 
 
