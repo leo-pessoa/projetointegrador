@@ -18,6 +18,7 @@ namespace WebAppCrudsPrj
 
         protected void ButtonCca_Click(object sender, EventArgs e)
         {
+
         }
     }
 }
