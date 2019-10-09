@@ -11,8 +11,8 @@
          
     <label for="pago"><b>Pago</b></label><br />
     <asp:DropDownList ID="DropDownList1" runat="server">
-        <asp:ListItem Value="Pago">Sim</asp:ListItem>
         <asp:ListItem Value="nPago">Não</asp:ListItem>
+        <asp:ListItem Value="Pago">Sim</asp:ListItem>
     </asp:DropDownList>
     <br />
         <label for="data"><b>Data</b></label><br />
