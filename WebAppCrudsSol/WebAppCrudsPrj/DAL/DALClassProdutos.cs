@@ -180,7 +180,7 @@ namespace WebAppCruds.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "SELECT * FROM Produtos WHERE(nome like '%"+ID+"%')or cast(id as varchar) like '%"+nome+"%')";
+            cmd.CommandText = "SELECT * FROM Produtos WHERE(nome like '%"+nome+"%')or cast(id as varchar) like '%"+nome+"%')";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -192,8 +192,9 @@ namespace WebAppCruds.DAL
                     aProdutos = new Modelo.Produtos(
                         Convert.ToInt32(dr["id"].ToString()),
                         dr["nome"].ToString(),
-                        dr["cpf"].ToString(),
-                        dr["perfil"].ToString()
+                         double.Parse(dr["valor"].ToString()),
+                        dr["descricao"].ToString(),
+                        Convert.ToInt32(dr["quantidade"].ToString())
                         );
                     // Adiciona o livro lido à lista
                     aListProdutos.Add(aProdutos);
