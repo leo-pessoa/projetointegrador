@@ -18,10 +18,6 @@
         <label for="id"><b>ID</b></label>
     <asp:TextBox ID="TextBoxId" runat="server"></asp:TextBox>
         
-
-   
-
-
          
     <label for="pago"><b>Pago</b></label><br />
     <asp:DropDownList ID="DropDownList1" runat="server">
