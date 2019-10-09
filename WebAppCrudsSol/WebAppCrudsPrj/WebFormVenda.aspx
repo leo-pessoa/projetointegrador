@@ -5,9 +5,23 @@
 <div class="container">
     <h1>Nova Venda</h1>
     <p>Preencha todos os campos</p>
-      
+          <label for="cliente"><b>Cliente</b></label>
+    <asp:TextBox runat="server" ID="cliente" />
+    <asp:Button Text="Pesquisar" ID="buttonp" runat="server" />
+    <br />
+    <asp:ListBox ID="ListBox1" runat="server" DataSourceID="ObjectDataSource7" DataTextField="nome" DataValueField="id" Width="170px"></asp:ListBox>
+        <asp:ObjectDataSource ID="ObjectDataSource7" runat="server" SelectMethod="Select" TypeName="WebAppCruds.DAL.DALClassClientes">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="cliente" Name="nome" PropertyName="Text" Type="String" />
+            </SelectParameters>
+    </asp:ObjectDataSource>
         <label for="id"><b>ID</b></label>
     <asp:TextBox ID="TextBoxId" runat="server"></asp:TextBox>
+        
+
+   
+
+
          
     <label for="pago"><b>Pago</b></label><br />
     <asp:DropDownList ID="DropDownList1" runat="server">

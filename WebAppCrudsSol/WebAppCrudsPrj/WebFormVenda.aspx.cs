@@ -41,7 +41,7 @@ namespace WebAppCrudsPrj
             iDALClassProdutos.Insert(iProdutos);
 
 
-            Response.Redirect("~\\WebFormCRUDDetalheVendas.aspx");
+            Response.Redirect("~\\WebFormCRUDDetalheVenda.aspx");
         }
 
         protected void Button0_Click(object sender, EventArgs e)

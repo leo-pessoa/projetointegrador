@@ -160,5 +160,47 @@ namespace WebAppCruds.DAL
 
             return aListClientes;
         }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Clientes> Select(String nome)
+        {
+            // Variavel para armazenar um livro
+            Modelo.Clientes aClientes;
+            // Cria Lista Vazia
+            List<Modelo.Clientes> aListClientes = new List<Modelo.Clientes>();
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+            // define SQL do comando
+            cmd.CommandText = "SELECT * FROM Usuario WHERE nome like '%"+nome+"%' ";
+            // Executa comando, gerando objeto DbDataReader
+            SqlDataReader dr = cmd.ExecuteReader();
+            // Le titulo do livro do resultado e apresenta no segundo rótulo
+            if (dr.HasRows)
+            {
+                while (dr.Read()) // Le o proximo registro
+                {
+                    // Cria objeto com dados lidos do banco de dados
+                    aClientes = new Modelo.Clientes(
+                        Convert.ToInt32(dr["id"].ToString()),
+                        dr["nome"].ToString(),
+                        dr["cpf"].ToString(),
+                        dr["perfil"].ToString()
+                        );
+                    // Adiciona o livro lido à lista
+                    aListClientes.Add(aClientes);
+                }
+            }
+            // Fecha DataReader
+            dr.Close();
+            // Fecha Conexão
+            conn.Close();
+
+            return aListClientes;
+        }
+
     }
 }
