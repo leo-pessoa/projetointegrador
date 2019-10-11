@@ -15,6 +15,8 @@ namespace WebAppCrudsPrj
             {
                 Response.Redirect("WebFormLogin.aspx");
             }
+
+            TextBoxdate.Text = DateTime.Today.ToString("yyyy-MM-dd");
         }
 
 
