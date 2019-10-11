@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Language="C#"  MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="WebFormCRUDFornecedoresEdit.aspx.cs" Inherits="WebAppCruds.WebFormCRUDFornecedoresEdit" Theme="Tema1"%>
+<%@ Page Language="C#"  MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="WebFormCRUDFornecedoresEdit.aspx.cs" Inherits="WebAppCrudsPrj.WebFormCRUDFornecedoresEdit" Theme="Tema1"%>
 
 
 

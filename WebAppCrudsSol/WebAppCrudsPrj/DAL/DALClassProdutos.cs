@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace WebAppCruds.DAL
+namespace WebAppCrudsPrj.DAL
 {
     public class DALClassProdutos
     {

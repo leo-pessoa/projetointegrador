@@ -20,7 +20,6 @@ namespace WebAppCrudsPrj
         protected void ButtonSalvar_Click(object sender, EventArgs e)
         {
             DAL.DALClassUsuarios aDALUsuario = new DAL.DALClassUsuarios();
-            // Valida Usuario
             List<Modelo.Usuarios> aListUsuarios = aDALUsuario.Select(TextBoxLogin.Text);
             if (aListUsuarios.Count == 0)
             {

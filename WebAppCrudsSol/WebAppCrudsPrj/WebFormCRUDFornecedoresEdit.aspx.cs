@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebAppCruds
+namespace WebAppCrudsPrj
 {
     public partial class WebFormCRUDFornecedoresEdit : System.Web.UI.Page
     {

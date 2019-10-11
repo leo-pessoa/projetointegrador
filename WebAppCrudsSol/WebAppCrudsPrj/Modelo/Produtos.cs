@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WebAppCruds.Modelo
+namespace WebAppCrudsPrj.Modelo
 {
     public class Produtos
     {
