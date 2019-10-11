@@ -9,6 +9,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
         <asp:Label ID="LabelMsgErro" runat="server" ForeColor="Red"></asp:Label>
+        <br />
         <asp:Label ID="LabelCa" runat="server" Text="Consultar Dívidas: " ForeColor="White"></asp:Label><br />
         <asp:TextBox ID="TextBoxCa" runat="server" Width="300px" TextMode="SingleLine" placeholder="Digite o CPF" MaxLength="11"></asp:TextBox><br />
         <asp:Button ID="ButtonCca" runat="server" Text="Consultar" OnClick="ButtonCca_Click" />
