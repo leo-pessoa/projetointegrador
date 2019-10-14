@@ -28,7 +28,7 @@ namespace WebAppCrudsPrj
             DAL.DalClassDetalheVendas iDALClassDet;
           
 
-            iDet = new Modelo.DetalheVenda(id, ddl1.SelectedIndex, Convert.ToInt32(TextBoxQtd.Text));
+            iDet = new Modelo.DetalheVenda(id, int.Parse(ddl1.Text), Convert.ToInt32(TextBoxQtd.Text));
 
 
             iDALClassDet = new DAL.DalClassDetalheVendas();
