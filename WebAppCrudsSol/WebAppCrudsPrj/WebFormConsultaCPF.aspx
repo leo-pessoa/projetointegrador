@@ -14,7 +14,7 @@
         <asp:TextBox ID="TextBoxCa" runat="server" Width="300px" TextMode="SingleLine" placeholder="Digite o CPF" MaxLength="11"></asp:TextBox><br />
         <asp:Button ID="ButtonCca" runat="server" Text="Consultar" OnClick="ButtonCca_Click" />
         <br />
-        <asp:Label ID="labelca2" runat="server" />
+
     </div>
 </asp:Content>
 
