@@ -51,7 +51,7 @@
                 <PagerStyle BackColor="#2461BF" ForeColor="black" HorizontalAlign="Center" />
                 <RowStyle BackColor="#ffffff" />
             </asp:DetailsView>
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCruds.Modelo.Clientes" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="WebAppCruds.DAL.DALClassClientes" UpdateMethod="Update" OnDeleted="ObjectDataSource1_Deleted">
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Clientes" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassClientes" UpdateMethod="Update" OnDeleted="ObjectDataSource1_Deleted">
                 <SelectParameters>
                     <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
                 </SelectParameters>

@@ -22,19 +22,23 @@ namespace WebAppCrudsPrj
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
+            int sessao = int.Parse(TextBoxId.Text);
+            Session["id"] = sessao;
+
             Modelo.Venda iProdutos;
             DAL.DalClassVendas iDALClassProdutos;
             int pago;
             if(DropDownList1.SelectedValue == "Pago")
             {
-                pago = '0'; 
+                pago = 0; 
             }
             else
             {
-                pago = '1';
+                pago = 1;
             }
 
-            iProdutos = new Modelo.Venda(int.Parse(TextBoxId.Text), pago.ToString(), Convert.ToDateTime(TextBoxdate.Text), int.Parse(ListBox1.Text));
+            iProdutos = new Modelo.Venda(int.Parse(TextBoxId.Text), pago, Convert.ToDateTime(TextBoxdate.Text), int.Parse(ListBox1.Text));
 
 
             iDALClassProdutos = new DAL.DalClassVendas();

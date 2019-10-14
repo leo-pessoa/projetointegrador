@@ -10,7 +10,7 @@
     <asp:Button Text="Pesquisar" ID="buttonp" runat="server" />
     <br />
     <asp:ListBox ID="ListBox1" runat="server" DataSourceID="ObjectDataSource7" DataTextField="nome" DataValueField="id" Width="170px"></asp:ListBox>
-        <asp:ObjectDataSource ID="ObjectDataSource7" runat="server" SelectMethod="Select" TypeName="WebAppCruds.DAL.DALClassClientes">
+        <asp:ObjectDataSource ID="ObjectDataSource7" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassClientes">
             <SelectParameters>
                 <asp:ControlParameter ControlID="cliente" Name="nome" PropertyName="Text" Type="String" />
             </SelectParameters>
@@ -39,7 +39,7 @@
 
     <div class="clearfix">
       
-    <asp:Button ID="Button1" runat="server" Text="Salvar" OnClick="Button1_Click" />
+    <asp:Button ID="Button1" runat="server" Text="Próximo" OnClick="Button1_Click" />
     </div>
 </div>
 

@@ -29,7 +29,7 @@
                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                 <RowStyle BackColor="#EFF3FB" />
             </asp:DetailsView>
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCruds.Modelo.Produtos" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="WebAppCruds.DAL.DALClassProdutos" UpdateMethod="Update" OnDeleted="ObjectDataSource1_Deleted">
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Produtos" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos" UpdateMethod="Update" OnDeleted="ObjectDataSource1_Deleted">
                 <InsertParameters>
                     <asp:Parameter DbType="Double" Name="valor" />
                 </InsertParameters>

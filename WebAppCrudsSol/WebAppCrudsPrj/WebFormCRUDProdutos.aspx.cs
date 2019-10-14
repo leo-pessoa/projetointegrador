@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebAppCruds
+namespace WebAppCrudsPrj
 {
     public partial class WebFormCRUDProdutos : System.Web.UI.Page
     {
@@ -27,7 +27,7 @@ namespace WebAppCruds
                 int index = Convert.ToInt32(e.CommandArgument);
 
                 // Copia o conteúdo da primeira célula da linha -> Código do Livro
-                codigo = GridView1.Rows[index].Cells[0].Text;
+                codigo = Grid1.Rows[index].Cells[0].Text;
 
                 // Grava código do Livro na sessão
                 Session["id"] = codigo;

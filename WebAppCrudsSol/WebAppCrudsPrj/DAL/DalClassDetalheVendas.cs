@@ -8,28 +8,28 @@ using System.Web;
 
 namespace WebAppCrudsPrj.DAL
 {
-    public class DalClassVendas
+    public class DalClassDetalheVendas
     {
+
 
         string connectionString = "";
 
-        public DalClassVendas()
+        public DalClassDetalheVendas()
         {
             connectionString = ConfigurationManager.ConnectionStrings["SGEDConnectionString"].ConnectionString;
         }
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.Venda obj)
+        public void Insert(Modelo.DetalheVenda obj)
         {
-        
+
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Venda (id, verif_pago, data_venda, usuario_id) VALUES(@id, @verif_pago, @data_venda, @usuario_id)", conn);
-            cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.Parameters.AddWithValue("@verif_pago", obj.pago);
-            cmd.Parameters.AddWithValue("@data_venda", obj.data);
-            cmd.Parameters.AddWithValue("@usuario_id", obj.usuario_id);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Detalhe_Venda (produto_id, venda_id, quantidadeprod) VALUES(@produto_id, @venda_id, @quantidadeprod)", conn);
+            cmd.Parameters.AddWithValue("@produto_id", obj.produto_id);
+            cmd.Parameters.AddWithValue("@venda_id", obj.venda_id);
+            cmd.Parameters.AddWithValue("@quantidadeprod", obj.quantidadeprod);
 
 
             cmd.ExecuteNonQuery();
@@ -37,26 +37,25 @@ namespace WebAppCrudsPrj.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Venda> Select(int id)
+        public List<Modelo.DetalheVenda> Select(int id)
         {
 
-            Modelo.Venda aVenda;
-            List<Modelo.Venda> aListVenda = new List<Modelo.Venda>();
+            Modelo.DetalheVenda aVenda;
+            List<Modelo.DetalheVenda> aListVenda = new List<Modelo.DetalheVenda>();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM Venda";
+            cmd.CommandText = "SELECT * FROM etalhe_Venda";
             cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
                 while (dr.Read())
                 {
-                    aVenda = new Modelo.Venda(
-                        Convert.ToInt32(dr["id"].ToString()),
-                         Convert.ToInt32(dr["verif_pago"]),
-                        Convert.ToDateTime(dr["data_venda"]),
-                        Convert.ToInt32(dr["usuario_id"].ToString())
+                    aVenda = new Modelo.DetalheVenda(
+                        Convert.ToInt32(dr["produto_id"]),
+                         Convert.ToInt32(dr["venda_id"]),
+                         Convert.ToInt32(dr["quantidadeprod"])
                         );
                     aListVenda.Add(aVenda);
                 }
@@ -68,11 +67,11 @@ namespace WebAppCrudsPrj.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Venda> SelectAll()
+        public List<Modelo.DetalheVenda> SelectAll()
         {
 
-            Modelo.Venda aVenda;
-            List<Modelo.Venda> aListVenda = new List<Modelo.Venda>();
+            Modelo.DetalheVenda aVenda;
+            List<Modelo.DetalheVenda> aListVenda = new List<Modelo.DetalheVenda>();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -82,11 +81,10 @@ namespace WebAppCrudsPrj.DAL
             {
                 while (dr.Read())
                 {
-                    aVenda = new Modelo.Venda(
-                        Convert.ToInt32(dr["id"].ToString()),
-                        Convert.ToInt32(dr["verif_pago"]),
-                        Convert.ToDateTime(dr["data_venda"]),
-                        Convert.ToInt32(dr["usuario_id"].ToString())
+                    aVenda = new Modelo.DetalheVenda(
+                        Convert.ToInt32(dr["produto_id"]),
+                         Convert.ToInt32(dr["venda_id"]),
+                         Convert.ToInt32(dr["quantidadeprod"])
                         );
                     aListVenda.Add(aVenda);
                 }
@@ -107,13 +105,14 @@ namespace WebAppCrudsPrj.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("DELETE FROM Venda WHERE id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", id);
+            SqlCommand cmd = new SqlCommand("DELETE FROM Detalhe_Venda WHERE venda_id = @venda_id", conn);
+            cmd.Parameters.AddWithValue("@venda_id", id);
 
             // Executa Comando
             cmd.ExecuteNonQuery();
 
         }
+
 
 
     }
