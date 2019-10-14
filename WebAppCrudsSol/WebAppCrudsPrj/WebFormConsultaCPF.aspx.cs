@@ -24,14 +24,18 @@ namespace WebAppCrudsPrj
         {
             String cpfinfo;
             cpfinfo = TextBoxCa.Text;
-            DAL.DALClassClientes aDALClientes = new DAL.DALClassClientes();
-            List<Modelo.Clientes> aListClientes = aDALClientes.Select(cpfinfo);
-            if (aListClientes.Count == 0)
+            DAL.DALClassCPF aDALCPF = new DAL.DALClassCPF();
+            List<Modelo.Clientes> aListCPF = aDALCPF.Select(cpfinfo);
+            if (aListCPF.Count == 0)
             {
                 Session["msgErro"] = "Usuário não cadastrado";
                 Response.Redirect("~\\WebFormConsultaCPF.aspx");
             }
-            Modelo.Clientes aClientes = aListClientes[0];
+            else
+            {
+
+            }
+            
         }
     }
 }

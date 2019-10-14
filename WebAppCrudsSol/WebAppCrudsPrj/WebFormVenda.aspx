@@ -15,7 +15,8 @@
                 <asp:ControlParameter ControlID="cliente" Name="nome" PropertyName="Text" Type="String" />
             </SelectParameters>
     </asp:ObjectDataSource>
-        <label for="id"><b>ID</b></label>
+         <br />
+        <label for="id"><b>ID da Venda</b></label>
     <asp:TextBox ID="TextBoxId" runat="server"></asp:TextBox>
         
          
