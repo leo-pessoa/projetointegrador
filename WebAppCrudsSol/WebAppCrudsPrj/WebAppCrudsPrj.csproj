@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DALClassClientes.cs" />
+    <Compile Include="DAL\DALClassConsultas.cs" />
     <Compile Include="DAL\DALClassCPF.cs" />
     <Compile Include="DAL\DalClassDetalheVendas.cs" />
     <Compile Include="DAL\DALClassFornecedores.cs" />

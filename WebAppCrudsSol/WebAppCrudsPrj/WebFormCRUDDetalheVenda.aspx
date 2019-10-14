@@ -4,9 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
         <div class="container">
-                     <label for="Venda"><b>Venda</b></label><br />
-                        <asp:dropdownlist runat="server" DataSourceID="ObjectDataSource2" DataTextField="id" DataValueField="id">
-</asp:dropdownlist>
                      <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DalClassVendas"></asp:ObjectDataSource>
         <br />
            <label for="Produto"><b>Produto</b></label><br />

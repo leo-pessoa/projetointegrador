@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -30,8 +31,9 @@ namespace WebAppCrudsPrj.DAL
                 conn.Open();
                 // Cria comando SQL
                 SqlCommand cmd = conn.CreateCommand();
-                // define SQL do comando
-                cmd.CommandText = "SELECT * FROM Usuario WHERE cpf ="+cpf;
+            // define SQL do comando
+                if (cpf == null) cpf = "";
+                cmd.CommandText = "SELECT * FROM Usuario WHERE cpf ='"+cpf+"'";
                 // Executa comando, gerando objeto DbDataReader
                 SqlDataReader dr = cmd.ExecuteReader();
                 // Le titulo do livro do resultado e apresenta no segundo rótulo
