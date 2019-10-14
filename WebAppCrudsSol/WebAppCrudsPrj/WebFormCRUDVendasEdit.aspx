@@ -17,9 +17,10 @@
             <Fields>
                 <asp:TemplateField HeaderText="Verificação" SortExpression="pago">
                     <EditItemTemplate>
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource1" DataTextField="pago" DataValueField="pago">
+                        <asp:DropDownList ID="DropDownList1" runat="server">
+                            <asp:ListItem Value="1">Sim</asp:ListItem>
+                            <asp:ListItem Value="0">Não</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
                     </EditItemTemplate>
                     <InsertItemTemplate>
                         <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("pago") %>'></asp:TextBox>
@@ -44,6 +45,9 @@
             <SelectParameters>
                 <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
             </SelectParameters>
+            <UpdateParameters>
+                <asp:Parameter DbType="DateTime" Name="Data" />
+            </UpdateParameters>
         </asp:ObjectDataSource>
     </div>
 </asp:Content>

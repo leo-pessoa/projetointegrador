@@ -16,7 +16,7 @@ namespace WebAppCrudsPrj.Modelo
             {
                 this.id = 0;
                 this.pago = 0;
-                this.data = Convert.ToDateTime("");
+                this.data = DateTime.Now;
                 this.usuario_id = 0;
             }
 
