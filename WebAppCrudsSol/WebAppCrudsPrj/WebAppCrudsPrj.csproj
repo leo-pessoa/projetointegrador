@@ -72,6 +72,8 @@
     <Content Include="Web.config" />
     <Content Include="WebFormConsultaCPF.aspx" />
     <Content Include="WebFormCRUDDetalheVenda.aspx" />
+    <Content Include="WebFormCRUDVendas.aspx" />
+    <Content Include="WebFormCRUDVendasEdit.aspx" />
     <Content Include="WebFormItem.aspx" />
     <Content Include="WebFormMenu1.aspx" />
     <Content Include="WebFormCadastrar.aspx" />
@@ -134,6 +136,20 @@
     </Compile>
     <Compile Include="WebFormCRUDDetalheVenda.aspx.designer.cs">
       <DependentUpon>WebFormCRUDDetalheVenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCRUDVendas.aspx.cs">
+      <DependentUpon>WebFormCRUDVendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCRUDVendas.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDVendas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCRUDVendasEdit.aspx.cs">
+      <DependentUpon>WebFormCRUDVendasEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCRUDVendasEdit.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDVendasEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormItem.aspx.cs">
       <DependentUpon>WebFormItem.aspx</DependentUpon>
