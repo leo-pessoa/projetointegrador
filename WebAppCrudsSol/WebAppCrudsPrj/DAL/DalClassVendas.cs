@@ -28,7 +28,7 @@ namespace WebAppCrudsPrj.DAL
             SqlCommand cmd = new SqlCommand("INSERT INTO Venda (id, verif_pago, data_venda, usuario_id) VALUES(@id, @verif_pago, @data_venda, @usuario_id)", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@verif_pago", obj.pago);
-            cmd.Parameters.AddWithValue("@data_venda", obj.data);
+            cmd.Parameters.AddWithValue("@data_venda", obj.data_venda);
             cmd.Parameters.AddWithValue("@usuario_id", obj.usuario_id);
 
 
@@ -98,19 +98,14 @@ namespace WebAppCrudsPrj.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(int id)
+        public void Delete(Modelo.Venda obj)
         {
-            // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
-            // Abre conexão com o banco de dados
             conn.Open();
-            // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
-            // Define comando de exclusão
             SqlCommand cmd = new SqlCommand("DELETE FROM Venda WHERE id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@id", obj.id);
 
-            // Executa Comando
             cmd.ExecuteNonQuery();
 
         }
@@ -118,21 +113,28 @@ namespace WebAppCrudsPrj.DAL
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void Update(Modelo.Venda obj)
         {
-            // Cria Conexão com banco de dados
+
             SqlConnection conn = new SqlConnection(connectionString);
-            // Abre conexão com o banco de dados
+
             conn.Open();
-            // Cria comando SQL
+
             SqlCommand com = conn.CreateCommand();
-            // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("UPDATE Venda SET verif_pago = @verif_pago, data = @data, usuario_id = @usuario_id WHERE id = @id", conn);
+
+            SqlCommand cmd = new SqlCommand("UPDATE Venda SET verif_pago = @verif_pago, data_venda = @data_venda, usuario_id = @usuario_id WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@verif_pago", obj.pago);
-            cmd.Parameters.AddWithValue("@data", obj.data);
+            cmd.Parameters.AddWithValue("@data_venda", obj.data_venda.ToString());
             cmd.Parameters.AddWithValue("@usuario_id", obj.usuario_id);
 
             // Executa Comando
             cmd.ExecuteNonQuery();
+
+
+
+
+
+
+
         }
     }
 }

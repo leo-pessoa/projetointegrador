@@ -8,46 +8,24 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
+    <div class="content">
         <asp:DetailsView ID="DetailsView1" runat="server" Height="144px" Width="474px" AutoGenerateRows="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None">
-            <AlternatingRowStyle BackColor="White" />
-            <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
-            <EditRowStyle BackColor="#2461BF" />
-            <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
+                <AlternatingRowStyle BackColor="White" />
+                <CommandRowStyle BackColor="#f9f9f9" Font-Bold="True" />
+                <EditRowStyle BackColor="#dadada" />
+                <FieldHeaderStyle BackColor="#dadada" Font-Bold="True" />
             <Fields>
-                <asp:TemplateField HeaderText="Verificação" SortExpression="pago">
-                    <EditItemTemplate>
-                        <asp:DropDownList ID="DropDownList1" runat="server">
-                            <asp:ListItem Value="1">Sim</asp:ListItem>
-                            <asp:ListItem Value="0">Não</asp:ListItem>
-                        </asp:DropDownList>
-                    </EditItemTemplate>
-                    <InsertItemTemplate>
-                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("pago") %>'></asp:TextBox>
-                    </InsertItemTemplate>
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("pago") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:BoundField DataField="data" DataFormatString="{0:d}" HeaderText="Data" SortExpression="data" />
-                <asp:BoundField DataField="usuario_id" HeaderText="Usuário" SortExpression="usuario_id" />
+                <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
+                <asp:BoundField DataField="pago" HeaderText="pago" SortExpression="pago" />
+                <asp:BoundField DataField="data_venda" HeaderText="data_venda" SortExpression="data_venda"/>
+                <asp:BoundField DataField="usuario_id" HeaderText="usuario_id" SortExpression="usuario_id" />
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             </Fields>
-            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#EFF3FB" />
+                <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#2461BF" ForeColor="black" HorizontalAlign="Center" />
+                <RowStyle BackColor="#ffffff" />
         </asp:DetailsView>      
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Venda" DeleteMethod="Delete" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DalClassVendas" UpdateMethod="Update">
-            <DeleteParameters>
-                <asp:Parameter Name="id" Type="Int32" />
-            </DeleteParameters>
-            <SelectParameters>
-                <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
-            </SelectParameters>
-            <UpdateParameters>
-                <asp:Parameter DbType="DateTime" Name="Data" />
-            </UpdateParameters>
-        </asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Venda" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DalClassVendas" UpdateMethod="Update"></asp:ObjectDataSource>
     </div>
 </asp:Content>
