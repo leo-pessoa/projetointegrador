@@ -27,9 +27,9 @@
             <asp:Button ID="Button2" runat="server" Text="Finalizar Venda" OnClick="Button2_Click" />
     </div>
 </div>
-
+    <br />
 <div class="mostragem">
-
+    
 </div>
 
 

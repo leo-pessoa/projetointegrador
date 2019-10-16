@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="WebFormCRUDDetalheVendaEdit.aspx.cs" Inherits="WebAppCrudsPrj.WebFormCRUDDetalheVendaEdit" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="WebFormCRUDDetalheVendaEdit.aspx.cs" Inherits="WebAppCrudsPrj.WebFormCRUDDetalheVendaEdit" Theme="Tema1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
