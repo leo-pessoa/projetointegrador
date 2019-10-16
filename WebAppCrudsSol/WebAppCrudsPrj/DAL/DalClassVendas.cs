@@ -22,7 +22,7 @@ namespace WebAppCrudsPrj.DAL
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Venda obj)
         {
-        
+
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
@@ -46,7 +46,7 @@ namespace WebAppCrudsPrj.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM Venda";
+            cmd.CommandText = "SELECT * FROM Venda WHERE id = @id";
             cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
@@ -114,13 +114,13 @@ namespace WebAppCrudsPrj.DAL
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void Update(Modelo.Venda obj)
         {
-
+            // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
-
+            // Abre conexão com o banco de dados
             conn.Open();
-
+            // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
-
+            // Define comando de exclusão
             SqlCommand cmd = new SqlCommand("UPDATE Venda SET id = @id, verif_pago = @verif_pago, data_venda = @data_venda, usuario_id = @usuario_id  WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@verif_pago", obj.pago);
@@ -129,13 +129,6 @@ namespace WebAppCrudsPrj.DAL
 
             // Executa Comando
             cmd.ExecuteNonQuery();
-
-
-
-
-
-
-
         }
     }
 }

@@ -9,7 +9,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
-        <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None">
+        <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="535px" AutoGenerateRows="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" >
             <AlternatingRowStyle BackColor="White" />
             <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
             <EditRowStyle BackColor="#2461BF" />
@@ -17,7 +17,7 @@
             <Fields>
                 <asp:TemplateField HeaderText="Código" SortExpression="id">
                     <EditItemTemplate>
-                        <asp:Label ID="Label3" runat="server" Text='<%# Eval("id") %>'></asp:Label>
+                        <asp:Label ID="Label3" runat="server" Text='<%# Bind("id") %>'></asp:Label>
                     </EditItemTemplate>
                     <InsertItemTemplate>
                         <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("id") %>'></asp:TextBox>
@@ -28,30 +28,30 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Verificação" SortExpression="pago">
                     <EditItemTemplate>
-                        <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:DropDownList ID="DropDownList2" runat="server" SelectedValue='<%# Bind("pago") %>'>
                             <asp:ListItem Value="1">Sim</asp:ListItem>
                             <asp:ListItem Value="0">Não</asp:ListItem>
                         </asp:DropDownList>
                     </EditItemTemplate>
                     <InsertItemTemplate>
-                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("pago") %>'></asp:TextBox>
+                        <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("pago") %>'></asp:TextBox>
                     </InsertItemTemplate>
                     <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("pago") %>'></asp:Label>
+                        <asp:Label ID="Label3" runat="server" Text='<%# Bind("pago") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="data_venda" DataFormatString="{0:d}" HeaderText="Data" SortExpression="data_venda" />
                 <asp:TemplateField HeaderText="Usuário" SortExpression="usuario_id">
                     <EditItemTemplate>
-                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource1" DataTextField="nome" DataValueField="id">
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="nome" DataValueField="id" SelectedValue='<%# Bind("usuario_id") %>'>
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SGEDConnectionString %>" SelectCommand="SELECT [id], [nome] FROM [Usuario] WHERE perfil = 'cliente'"></asp:SqlDataSource>
                     </EditItemTemplate>
                     <InsertItemTemplate>
-                        <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("usuario_id") %>'></asp:TextBox>
+                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("usuario_id") %>'></asp:TextBox>
                     </InsertItemTemplate>
                     <ItemTemplate>
-                        <asp:Label ID="Label3" runat="server" Text='<%# Bind("usuario_id") %>'></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("usuario_id") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />

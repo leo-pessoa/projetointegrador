@@ -31,11 +31,11 @@ namespace WebAppCrudsPrj
             int pago;
             if(DropDownList1.SelectedValue == "Pago")
             {
-                pago = 0; 
+                pago = 1; 
             }
             else
             {
-                pago = 1;
+                pago = 0;
             }
 
             iProdutos = new Modelo.Venda(int.Parse(TextBoxId.Text), pago, Convert.ToDateTime(TextBoxdate.Text).Date, int.Parse(ListBox1.Text));
