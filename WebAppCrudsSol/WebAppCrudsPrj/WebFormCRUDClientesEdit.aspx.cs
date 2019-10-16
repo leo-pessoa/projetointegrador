@@ -19,20 +19,30 @@ namespace WebAppCrudsPrj
 
         protected void ObjectDataSource1_Deleted(object sender, ObjectDataSourceStatusEventArgs e)
         {
-            int codigo;
-            Modelo.Clientes aClientes;
-            DAL.DALClassClientes aDALClassClientes;
 
-            codigo = int.Parse(DetailsView1.Rows[0].Cells[1].Text);
+            try
+            {
+                int codigo;
+                Modelo.Clientes aClientes;
+                DAL.DALClassClientes aDALClassClientes;
 
-            aClientes = new Modelo.Clientes();
-            aClientes.id = codigo; 
+                codigo = int.Parse(DetailsView1.Rows[0].Cells[1].Text);
 
-            aDALClassClientes = new DAL.DALClassClientes();
+                aClientes = new Modelo.Clientes();
+                aClientes.id = codigo;
 
-            aDALClassClientes.Delete(aClientes);
+                aDALClassClientes = new DAL.DALClassClientes();
 
-            Response.Redirect("~\\WebFormCRUDClientes.aspx");
+                aDALClassClientes.Delete(aClientes);
+
+                Response.Redirect("~\\WebFormCRUDClientes.aspx");
+            }
+            catch
+            {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
+            }
+
+
         }
     }
 }

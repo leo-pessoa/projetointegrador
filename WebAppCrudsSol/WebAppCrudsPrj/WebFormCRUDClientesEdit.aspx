@@ -9,6 +9,13 @@
             margin-bottom: 0px;
         }
     </style>
+
+        <script>
+        function ErroTamanhoExagerado() {
+            alert("Informações inválidas");
+            return false;
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      

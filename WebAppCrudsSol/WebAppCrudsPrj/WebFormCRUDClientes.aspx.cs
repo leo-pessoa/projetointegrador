@@ -19,17 +19,25 @@ namespace WebAppCrudsPrj
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "Editar")
+
+            try
             {
-                string codigo;
+                if (e.CommandName == "Editar")
+                {
+                    string codigo;
 
-                int index = Convert.ToInt32(e.CommandArgument);
+                    int index = Convert.ToInt32(e.CommandArgument);
 
-                codigo = GridView1.Rows[index].Cells[0].Text;
+                    codigo = GridView1.Rows[index].Cells[0].Text;
 
-                Session["id"] = codigo;
+                    Session["id"] = codigo;
 
-                Response.Redirect("~\\WebFormCRUDClientesEdit.aspx");
+                    Response.Redirect("~\\WebFormCRUDClientesEdit.aspx");
+                }
+            }
+            catch
+            {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
             }
         }
     }

@@ -19,20 +19,32 @@ namespace WebAppCrudsPrj
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Modelo.Clientes iClientes;
-            DAL.DALClassClientes iDALClassClientes;
+
+            try
+            {
+                Modelo.Clientes iClientes;
+                DAL.DALClassClientes iDALClassClientes;
 
 
-            iClientes = new Modelo.Clientes(int.Parse(TextBoxId.Text), TextBoxNome.Text, TextBoxCPF.Text, TextBoxPerfil.Text);
+                iClientes = new Modelo.Clientes(int.Parse(TextBoxId.Text), TextBoxNome.Text, TextBoxCPF.Text, TextBoxPerfil.Text);
 
 
-            iDALClassClientes = new DAL.DALClassClientes();
+                iDALClassClientes = new DAL.DALClassClientes();
 
 
-            iDALClassClientes.Insert(iClientes);
+                iDALClassClientes.Insert(iClientes);
 
 
-            Response.Redirect("~\\WebFormCRUDClientes.aspx");
+                Response.Redirect("~\\WebFormCRUDClientes.aspx");
+            }
+
+
+            catch
+            {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
+            }
+
+
         }
     }
 }

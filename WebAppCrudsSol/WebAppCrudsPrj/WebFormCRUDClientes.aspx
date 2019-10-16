@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="WebFormCRUDClientes.aspx.cs" Inherits="WebAppCrudsPrj.WebFormCRUDClientes" Theme="Tema1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+        <script>
+        function ErroTamanhoExagerado() {
+            alert("Informações inválidas");
+            return false;
+        }
+    </script>
     <link href="CSS/gridcss.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
