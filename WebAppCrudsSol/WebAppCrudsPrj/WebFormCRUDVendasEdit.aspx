@@ -9,12 +9,23 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
-        <asp:DetailsView ID="DetailsView1" runat="server" Height="144px" Width="474px" AutoGenerateRows="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None">
-                <AlternatingRowStyle BackColor="White" />
-                <CommandRowStyle BackColor="#f9f9f9" Font-Bold="True" />
-                <EditRowStyle BackColor="#dadada" />
-                <FieldHeaderStyle BackColor="#dadada" Font-Bold="True" />
+        <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
+            <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
+            <EditRowStyle BackColor="#2461BF" />
+            <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
             <Fields>
+                <asp:TemplateField HeaderText="Código" SortExpression="id">
+                    <EditItemTemplate>
+                        <asp:Label ID="Label3" runat="server" Text='<%# Eval("id") %>'></asp:Label>
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("id") %>'></asp:TextBox>
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label2" runat="server" Text='<%# Bind("id") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="Verificação" SortExpression="pago">
                     <EditItemTemplate>
                         <asp:DropDownList ID="DropDownList1" runat="server">
@@ -29,16 +40,31 @@
                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("pago") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:BoundField DataField="data_venda" HeaderText="Data" SortExpression="data_venda" DataFormatString="{0:d}" />
-                <asp:BoundField DataField="usuario_id" HeaderText="Usuário" SortExpression="usuario_id"/>
+                <asp:BoundField DataField="data_venda" DataFormatString="{0:d}" HeaderText="Data" SortExpression="data_venda" />
+                <asp:TemplateField HeaderText="Usuário" SortExpression="usuario_id">
+                    <EditItemTemplate>
+                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource1" DataTextField="nome" DataValueField="id">
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SGEDConnectionString %>" SelectCommand="SELECT [id], [nome] FROM [Usuario] WHERE perfil = 'cliente'"></asp:SqlDataSource>
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("usuario_id") %>'></asp:TextBox>
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label3" runat="server" Text='<%# Bind("usuario_id") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             </Fields>
-                <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#2461BF" ForeColor="black" HorizontalAlign="Center" />
-                <RowStyle BackColor="#ffffff" />
-        </asp:DetailsView>      
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Venda" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DalClassVendas" UpdateMethod="Update">
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EFF3FB" />
+        </asp:DetailsView>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Venda" DeleteMethod="Delete" OnDeleting="ObjectDataSource1_Deleting1" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DalClassVendas" UpdateMethod="Update">
+            <SelectParameters>
+                <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
+            </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter DbType="Date" Name="data_venda" />
             </UpdateParameters>

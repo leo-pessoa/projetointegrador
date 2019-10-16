@@ -16,7 +16,7 @@ namespace WebAppCrudsPrj.Modelo
             {
                 this.id = 0;
                 this.pago = 0;
-                this.data_venda = DateTime.Now;
+                this.data_venda = (DateTime.Now).Date ;
                 this.usuario_id = 0;
             }
 

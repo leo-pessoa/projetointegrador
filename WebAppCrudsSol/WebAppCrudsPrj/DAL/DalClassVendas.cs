@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 
@@ -55,7 +56,7 @@ namespace WebAppCrudsPrj.DAL
                     aVenda = new Modelo.Venda(
                         Convert.ToInt32(dr["id"].ToString()),
                          Convert.ToInt32(dr["verif_pago"]),
-                        Convert.ToDateTime(dr["data_venda"]),
+                        Convert.ToDateTime(dr["data_venda"]).Date,
                         Convert.ToInt32(dr["usuario_id"].ToString())
                         );
                     aListVenda.Add(aVenda);
@@ -85,7 +86,7 @@ namespace WebAppCrudsPrj.DAL
                     aVenda = new Modelo.Venda(
                         Convert.ToInt32(dr["id"].ToString()),
                         Convert.ToInt32(dr["verif_pago"]),
-                        Convert.ToDateTime(dr["data_venda"]),
+                        Convert.ToDateTime(dr["data_venda"]).Date,
                         Convert.ToInt32(dr["usuario_id"].ToString())
                         );
                     aListVenda.Add(aVenda);
@@ -120,10 +121,10 @@ namespace WebAppCrudsPrj.DAL
 
             SqlCommand com = conn.CreateCommand();
 
-            SqlCommand cmd = new SqlCommand("UPDATE Venda SET verif_pago = @verif_pago, data_venda = @data_venda, usuario_id = @usuario_id WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Venda SET id = @id, verif_pago = @verif_pago, data_venda = @data_venda, usuario_id = @usuario_id  WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@verif_pago", obj.pago);
-            cmd.Parameters.AddWithValue("@data_venda", obj.data_venda.ToString());
+            cmd.Parameters.AddWithValue("@data_venda", obj.data_venda);
             cmd.Parameters.AddWithValue("@usuario_id", obj.usuario_id);
 
             // Executa Comando

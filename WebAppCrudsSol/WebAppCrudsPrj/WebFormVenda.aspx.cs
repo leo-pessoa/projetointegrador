@@ -38,7 +38,7 @@ namespace WebAppCrudsPrj
                 pago = 1;
             }
 
-            iProdutos = new Modelo.Venda(int.Parse(TextBoxId.Text), pago, Convert.ToDateTime(TextBoxdate.Text), int.Parse(ListBox1.Text));
+            iProdutos = new Modelo.Venda(int.Parse(TextBoxId.Text), pago, Convert.ToDateTime(TextBoxdate.Text).Date, int.Parse(ListBox1.Text));
 
 
             iDALClassProdutos = new DAL.DalClassVendas();
