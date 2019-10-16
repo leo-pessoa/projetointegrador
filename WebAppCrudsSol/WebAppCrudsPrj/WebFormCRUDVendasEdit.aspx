@@ -15,11 +15,11 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
-        <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="535px" AutoGenerateRows="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" >
-            <AlternatingRowStyle BackColor="White" />
-            <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
-            <EditRowStyle BackColor="#2461BF" />
-            <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
+        <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="535px" AutoGenerateRows="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" CssClass="mydatagrid" PagerStyle-CssClass="pager"
+ HeaderStyle-CssClass="header" RowStyle-CssClass="rows" >
+            <CommandRowStyle BackColor="#f9f9f9" Font-Bold="True" />
+                <EditRowStyle BackColor="#dadada" />
+                <FieldHeaderStyle BackColor="#dadada" Font-Bold="True" />
             <Fields>
                 <asp:TemplateField HeaderText="Código" SortExpression="id">
                     <EditItemTemplate>

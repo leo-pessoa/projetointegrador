@@ -11,7 +11,10 @@ namespace WebAppCrudsPrj
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if ((Session["log_in"] == null))
+            {
+                Response.Redirect("WebFormLogin.aspx");
+            }
         }
 
         protected void ObjectDataSource1_Deleting1(object sender, ObjectDataSourceMethodEventArgs e)
