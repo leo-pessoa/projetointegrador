@@ -4,6 +4,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link href="CSS/gridcss.css" rel="stylesheet" />
+            <script>
+        function ErroTamanhoExagerado() {
+            alert("Informações inválidas");
+            return false;
+        }
+    </script>
 </asp:Content>
 
 

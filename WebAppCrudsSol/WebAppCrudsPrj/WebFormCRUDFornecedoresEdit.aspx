@@ -6,6 +6,12 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="head" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+            <script>
+        function ErroTamanhoExagerado() {
+            alert("Informações inválidas");
+            return false;
+        }
+    </script>
 </asp:Content>
 
 

@@ -19,24 +19,31 @@ namespace WebAppCrudsPrj
 
         protected void ObjectDataSource1_Deleted(object sender, ObjectDataSourceStatusEventArgs e)
         {
-            int codigo;
-            Modelo.Produtos aProdutos;
-            DAL.DALClassProdutos aDALClassProdutos;
+            try
+            {
+                int codigo;
+                Modelo.Produtos aProdutos;
+                DAL.DALClassProdutos aDALClassProdutos;
 
-            // Copia o conteúdo da primeira célula da linha -> Código do Livro
-            codigo = int.Parse(DetailsView3.Rows[0].Cells[1].Text);
+                // Copia o conteúdo da primeira célula da linha -> Código do Livro
+                codigo = int.Parse(DetailsView3.Rows[0].Cells[1].Text);
 
-            // Instancia um Objeto de Livro Vazio
-            aProdutos = new Modelo.Produtos();
-            aProdutos.id = codigo; ;// Atribui apenas o ID
+                // Instancia um Objeto de Livro Vazio
+                aProdutos = new Modelo.Produtos();
+                aProdutos.id = codigo; ;// Atribui apenas o ID
 
-            // Instancia objeto da camada de negocio
-            aDALClassProdutos = new DAL.DALClassProdutos();
+                // Instancia objeto da camada de negocio
+                aDALClassProdutos = new DAL.DALClassProdutos();
 
-            // Chama metodo de delete passando o objeto apenas com o ID preenchido
-            aDALClassProdutos.Delete(aProdutos);
+                // Chama metodo de delete passando o objeto apenas com o ID preenchido
+                aDALClassProdutos.Delete(aProdutos);
 
-            Response.Redirect("~\\WebFormCRUDProdutos.aspx");
+                Response.Redirect("~\\WebFormCRUDProdutos.aspx");
+            }
+            catch
+            {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
+            }
 
         }
     }

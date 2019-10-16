@@ -21,20 +21,32 @@ namespace WebAppCrudsPrj
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Modelo.Fornecedores iFornecedores;
-            DAL.DALClassFornecedores iDALClassFornecedores;
+
+            try
+            {
+                Modelo.Fornecedores iFornecedores;
+                DAL.DALClassFornecedores iDALClassFornecedores;
 
 
-            iFornecedores = new Modelo.Fornecedores(int.Parse(TextBoxId.Text), TextBoxNome.Text, TextBoxEmail.Text, TextBoxTelefone. Text, int.Parse(DropDownList1.Text));
+                iFornecedores = new Modelo.Fornecedores(int.Parse(TextBoxId.Text), TextBoxNome.Text, TextBoxEmail.Text, TextBoxTelefone.Text, int.Parse(DropDownList1.Text));
 
 
-            iDALClassFornecedores = new DAL.DALClassFornecedores();
+                iDALClassFornecedores = new DAL.DALClassFornecedores();
 
 
-            iDALClassFornecedores.Insert(iFornecedores);
+                iDALClassFornecedores.Insert(iFornecedores);
 
 
-            Response.Redirect("~\\WebFormCRUDFornecedores.aspx");
+                Response.Redirect("~\\WebFormCRUDFornecedores.aspx");
+
+            }
+
+            catch
+            {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
+            }
+
+
         }
 
     }

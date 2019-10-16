@@ -18,20 +18,32 @@ namespace WebAppCrudsPrj
         }
         protected void ButtonS_Click(object sender, EventArgs e)
         {
-            Modelo.Produtos iProdutos;
-            DAL.DALClassProdutos iDALClassProdutos;
+            try
+            {
+                Modelo.Produtos iProdutos;
+                DAL.DALClassProdutos iDALClassProdutos;
 
-             
-            iProdutos = new Modelo.Produtos(int.Parse(TextBoxId.Text), TextBoxNome.Text, double.Parse(TextBoxValor.Text), TextBoxDesc.Text, int.Parse(TextBoxQtd.Text));
 
-             
-            iDALClassProdutos = new DAL.DALClassProdutos();
+                iProdutos = new Modelo.Produtos(int.Parse(TextBoxId.Text), TextBoxNome.Text, double.Parse(TextBoxValor.Text), TextBoxDesc.Text, int.Parse(TextBoxQtd.Text));
 
-             
-            iDALClassProdutos.Insert(iProdutos);
 
-             
-            Response.Redirect("~\\WebFormCRUDProdutos.aspx");
+                iDALClassProdutos = new DAL.DALClassProdutos();
+
+
+                iDALClassProdutos.Insert(iProdutos);
+
+
+                Response.Redirect("~\\WebFormCRUDProdutos.aspx");
+
+            }
+            catch
+            {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
+            }
+
+
+
+
         }
     }
 }

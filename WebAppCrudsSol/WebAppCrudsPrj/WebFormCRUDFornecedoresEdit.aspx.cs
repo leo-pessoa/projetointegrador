@@ -21,27 +21,37 @@ namespace WebAppCrudsPrj
 
         protected void ObjectDataSource1_Deleted(object sender, ObjectDataSourceStatusEventArgs e)
         {
-            int codigo;
-            Modelo.Fornecedores aFornecedores;
-            DAL.DALClassFornecedores aDALClassFornecedores;
 
-            // Copia o conteúdo da primeira célula da linha -> Código do Livro
-            codigo = int.Parse(DetailsView1.Rows[0].Cells[1].Text);
+            try
+            {
+                int codigo;
+                Modelo.Fornecedores aFornecedores;
+                DAL.DALClassFornecedores aDALClassFornecedores;
 
-            // Instancia um Objeto de Livro Vazio
-            aFornecedores = new Modelo.Fornecedores();
-            aFornecedores.id = codigo; ;// Atribui apenas o ID
+                // Copia o conteúdo da primeira célula da linha -> Código do Livro
+                codigo = int.Parse(DetailsView1.Rows[0].Cells[1].Text);
 
-            // Instancia objeto da camada de negocio
-            aDALClassFornecedores = new DAL.DALClassFornecedores();
+                // Instancia um Objeto de Livro Vazio
+                aFornecedores = new Modelo.Fornecedores();
+                aFornecedores.id = codigo; ;// Atribui apenas o ID
 
-            // Chama metodo de delete passando o objeto apenas com o ID preenchido
-            aDALClassFornecedores.Delete(aFornecedores);
+                // Instancia objeto da camada de negocio
+                aDALClassFornecedores = new DAL.DALClassFornecedores();
 
-            Response.Redirect("~\\WebFormCRUDFornecedores.aspx");
+                // Chama metodo de delete passando o objeto apenas com o ID preenchido
+                aDALClassFornecedores.Delete(aFornecedores);
+
+                Response.Redirect("~\\WebFormCRUDFornecedores.aspx");
+            }
+            catch
+            {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
+            }
+
+
+
+
         }
 
-       
     }
-    
 }
