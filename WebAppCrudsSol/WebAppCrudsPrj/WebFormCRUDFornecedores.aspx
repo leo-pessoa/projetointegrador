@@ -13,6 +13,8 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
                 <div class="content">
+                    <a href="WebFormCRUDFornecedoresNew.aspx" class="button2">Novo Fornecedor</a>
+                    <br />
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand" CssClass="mydatagrid" PagerStyle-CssClass="pager"
  HeaderStyle-CssClass="header" RowStyle-CssClass="rows">
                 <AlternatingRowStyle BackColor="White" />
@@ -37,7 +39,7 @@
             </asp:GridView>
                     <br />
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Fornecedores" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DALClassFornecedores" UpdateMethod="Update"></asp:ObjectDataSource>
-            <a href="WebFormCRUDFornecedoresNew.aspx" class="button2">Novo Fornecedor</a>
+            
 
         </div>
 </asp:Content>
