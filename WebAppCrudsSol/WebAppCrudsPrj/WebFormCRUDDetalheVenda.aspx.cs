@@ -19,6 +19,8 @@ namespace WebAppCrudsPrj
             {
                 id = Convert.ToInt32(Session["id"]);
             }
+
+            Label1.Text = Session["id"].ToString();
         }
 
 

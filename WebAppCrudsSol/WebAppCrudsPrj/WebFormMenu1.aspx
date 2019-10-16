@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="content">
          <h1 style="color:whitesmoke">Seja Bem-Vindo, à nossa Loja!</h1>
-         <h4 style="color:whitesmoke">Nossa equipe preparou uma incrível lista de pordutos disponíveis no dia de Hoje</h4>
+         <h4 style="color:whitesmoke">Nossa equipe preparou uma incrível lista de produtos disponíveis no dia de Hoje</h4>
          <br />
          <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows">
              <Columns>

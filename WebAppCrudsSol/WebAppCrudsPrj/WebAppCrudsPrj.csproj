@@ -72,6 +72,7 @@
     <Content Include="Web.config" />
     <Content Include="WebFormConsultaCPF.aspx" />
     <Content Include="WebFormCRUDDetalheVenda.aspx" />
+    <Content Include="WebFormCRUDDetalheVendaEdit.aspx" />
     <Content Include="WebFormCRUDVendas.aspx" />
     <Content Include="WebFormCRUDVendasEdit.aspx" />
     <Content Include="WebFormMenu1.aspx" />
@@ -135,6 +136,13 @@
     </Compile>
     <Compile Include="WebFormCRUDDetalheVenda.aspx.designer.cs">
       <DependentUpon>WebFormCRUDDetalheVenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCRUDDetalheVendaEdit.aspx.cs">
+      <DependentUpon>WebFormCRUDDetalheVendaEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCRUDDetalheVendaEdit.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDDetalheVendaEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormCRUDVendas.aspx.cs">
       <DependentUpon>WebFormCRUDVendas.aspx</DependentUpon>

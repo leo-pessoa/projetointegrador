@@ -58,6 +58,6 @@ namespace WebAppCrudsPrj.DAL
                 conn.Close();
 
                 return aListClientes;
+            }
         }
-    }
-}
+   }

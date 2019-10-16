@@ -20,9 +20,10 @@
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="Código" SortExpression="id" />
                 <asp:BoundField DataField="pago" HeaderText="Verificação" SortExpression="pago" />
-                <asp:BoundField DataField="data_venda" HeaderText="Data" SortExpression="data_venda" />
+                <asp:BoundField DataField="data_venda" HeaderText="Data" SortExpression="data_venda" DataFormatString="{0:d}" />
                 <asp:BoundField DataField="usuario_id" HeaderText="Usuário" SortExpression="usuario_id" />
                 <asp:ButtonField CommandName="Editar" Text="Editar" />
+                <asp:ButtonField CommandName="Detalhar" Text="Detalhar" />
             </Columns>
 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />

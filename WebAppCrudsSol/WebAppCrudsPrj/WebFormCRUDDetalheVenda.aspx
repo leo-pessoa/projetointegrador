@@ -11,6 +11,9 @@
     <div class="content">
         <div class="container">
                      <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DalClassVendas"></asp:ObjectDataSource>
+        
+            <label for="Produto"><b>Código da Venda: </b></label>
+            <asp:Label ID="Label1" runat="server"></asp:Label>
         <br />
            <label for="Produto"><b>Produto</b></label><br />
         <asp:dropdownlist ID="ddl1" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nome" DataValueField="id">
@@ -23,8 +26,11 @@
             <asp:Button ID="Button1" runat="server" Text="Próximo Produto" OnClick="Button1_Click" />
             <asp:Button ID="Button2" runat="server" Text="Finalizar Venda" OnClick="Button2_Click" />
     </div>
-    </div>
+</div>
 
+<div class="mostragem">
+
+</div>
 
 
     </asp:Content>

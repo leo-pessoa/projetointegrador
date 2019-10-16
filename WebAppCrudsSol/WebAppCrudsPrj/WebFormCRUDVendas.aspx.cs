@@ -38,6 +38,15 @@ namespace WebAppCrudsPrj
                     Response.Redirect("~\\WebFormCRUDVendasEdit.aspx");
                 }
 
+                if (e.CommandName == "Detalhar")
+                {
+                    string codigo;
+                    int index = Convert.ToInt32(e.CommandArgument);
+                    codigo = GridView1.Rows[index].Cells[0].Text;
+                    Session["id_de"] = codigo;
+                    Response.Redirect("~\\WebFormCRUDDetalheVendaEdit.aspx");
+                }
+
 
 
             }
