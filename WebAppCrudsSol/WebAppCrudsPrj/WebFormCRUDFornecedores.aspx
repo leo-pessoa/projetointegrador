@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="WebFormCRUDFornecedores.aspx.cs" Inherits="WebAppCruds.WebFormCRUDFornecedores" Theme="Tema1" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="WebFormCRUDFornecedores.aspx.cs" Inherits="WebAppCrudsPrj.WebFormCRUDFornecedores" Theme="Tema1" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="head" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -30,7 +30,7 @@
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
                     <br />
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCruds.Modelo.Fornecedores" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebAppCruds.DAL.DALClassFornecedores" UpdateMethod="Update"></asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Fornecedores" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DALClassFornecedores" UpdateMethod="Update"></asp:ObjectDataSource>
             <a href="WebFormCRUDFornecedoresNew.aspx" class="button2">Novo Fornecedor</a>
 
         </div>

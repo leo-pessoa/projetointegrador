@@ -7,7 +7,7 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace WebAppCruds {
+namespace WebAppCrudsPrj {
     
     
     public partial class WebFormCRUDFornecedoresNew {

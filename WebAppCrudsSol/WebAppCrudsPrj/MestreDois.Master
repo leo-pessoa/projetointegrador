@@ -20,6 +20,7 @@
     <ul class="nav navbar-nav">
       <li><a href="WebFormMenu1.aspx">Home</a></li>
       <li><a href="WebFormLogin.aspx">Login</a></li>
+      <li><a href="WebFormConsultaCPF.aspx">Consultar CPF</a></li>
     </ul>
       
   </div>

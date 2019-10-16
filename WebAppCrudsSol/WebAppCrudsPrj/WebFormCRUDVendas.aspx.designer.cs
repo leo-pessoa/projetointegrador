@@ -10,7 +10,7 @@
 namespace WebAppCrudsPrj {
     
     
-    public partial class WebFormCRUDClientes {
+    public partial class WebFormCRUDVendas {
         
         /// <summary>
         /// Controle GridView1.

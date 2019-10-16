@@ -7,14 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WebAppCrudsPrj
 {
-    public partial class WebFormCRUDProdutos : System.Web.UI.Page
+    public partial class WebFormCRUDVendas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((Session["log_in"] == null))
-            {
-                Response.Redirect("WebFormLogin.aspx");
-            }
+
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -27,13 +24,13 @@ namespace WebAppCrudsPrj
                 int index = Convert.ToInt32(e.CommandArgument);
 
                 // Copia o conteúdo da primeira célula da linha -> Código do Livro
-                codigo = Grid1.Rows[index].Cells[0].Text;
+                codigo = GridView1.Rows[index].Cells[0].Text;
 
                 // Grava código do Livro na sessão
                 Session["id"] = codigo;
 
                 // Chama a tela de edição
-                Response.Redirect("~\\WebFormCRUDProdutosEdit.aspx");
+                Response.Redirect("~\\WebFormCRUDVendasEdit.aspx");
             }
         }
     }

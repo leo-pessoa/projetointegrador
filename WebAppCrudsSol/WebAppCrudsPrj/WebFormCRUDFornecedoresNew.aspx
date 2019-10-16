@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="WebFormCRUDFornecedoresNew.aspx.cs" Inherits="WebAppCruds.WebFormCRUDFornecedoresNew" Theme="Tema1"%>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="WebFormCRUDFornecedoresNew.aspx.cs" Inherits="WebAppCrudsPrj.WebFormCRUDFornecedoresNew" Theme="Tema1"%>
 
 
 

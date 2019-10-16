@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="WebFormMenu.aspx.cs" Inherits="WebAppCruds.WebFormMenu" Theme="Tema1"%>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="WebFormMenu.aspx.cs" Inherits="WebAppCrudsPrj.WebFormMenu" Theme="Tema1"%>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

@@ -7,6 +7,5 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="content">
-        <asp:Button ID="ButtonCa" runat="server" Text="Consultar Dívidas" OnClick="ButtonCa_Click" />
      </div>
 </asp:Content>

@@ -13,6 +13,15 @@ namespace WebAppCrudsPrj {
     public partial class WebFormConsultaCPF {
         
         /// <summary>
+        /// Controle LabelMsgErro.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelMsgErro;
+        
+        /// <summary>
         /// Controle LabelCa.
         /// </summary>
         /// <remarks>
@@ -40,12 +49,21 @@ namespace WebAppCrudsPrj {
         protected global::System.Web.UI.WebControls.Button ButtonCca;
         
         /// <summary>
-        /// Controle labelca2.
+        /// Controle GridView1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelca2;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
+        
+        /// <summary>
+        /// Controle ObjectDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
     }
 }

@@ -8,11 +8,31 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
+        <asp:Label ID="LabelMsgErro" runat="server" ForeColor="Red"></asp:Label>
+        <br />
         <asp:Label ID="LabelCa" runat="server" Text="Consultar Dívidas: " ForeColor="White"></asp:Label><br />
         <asp:TextBox ID="TextBoxCa" runat="server" Width="300px" TextMode="SingleLine" placeholder="Digite o CPF" MaxLength="11"></asp:TextBox><br />
         <asp:Button ID="ButtonCca" runat="server" Text="Consultar" OnClick="ButtonCca_Click" />
         <br />
-        <asp:Label ID="labelca2" runat="server" />
+        <asp:GridView ID="GridView1" runat="server" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
+            <EditRowStyle BackColor="#2461BF" />
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EFF3FB" />
+            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+            
+        </asp:GridView>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectDividas" TypeName="WebAppCrudsPrj.DAL.DALClassConsultas">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="TextBoxCa" Name="cpf" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
     </div>
 </asp:Content>
 

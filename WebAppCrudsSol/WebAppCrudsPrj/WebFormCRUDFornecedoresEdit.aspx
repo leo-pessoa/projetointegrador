@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Language="C#"  MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="WebFormCRUDFornecedoresEdit.aspx.cs" Inherits="WebAppCruds.WebFormCRUDFornecedoresEdit" Theme="Tema1"%>
+<%@ Page Language="C#"  MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="WebFormCRUDFornecedoresEdit.aspx.cs" Inherits="WebAppCrudsPrj.WebFormCRUDFornecedoresEdit" Theme="Tema1"%>
 
 
 
@@ -42,7 +42,7 @@
                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                 <RowStyle BackColor="#EFF3FB" />
             </asp:DetailsView>
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCruds.Modelo.Fornecedores" DeleteMethod="Delete" InsertMethod="Insert" OnDeleted="ObjectDataSource1_Deleted" SelectMethod="Select" TypeName="WebAppCruds.DAL.DALClassFornecedores" UpdateMethod="Update">
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Fornecedores" DeleteMethod="Delete" InsertMethod="Insert" OnDeleted="ObjectDataSource1_Deleted" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassFornecedores" UpdateMethod="Update">
                 <SelectParameters>
                     <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
                 </SelectParameters>
