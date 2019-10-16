@@ -65,6 +65,7 @@ namespace WebAppCrudsPrj.DAL
         public void Insert(Modelo.Clientes obj)
         {
             SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
             SqlCommand com = conn.CreateCommand();
             SqlCommand cmd = new SqlCommand("INSERT INTO Usuario (id, nome, cpf, perfil) VALUES(@id, @nome, @cpf, @perfil)", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
