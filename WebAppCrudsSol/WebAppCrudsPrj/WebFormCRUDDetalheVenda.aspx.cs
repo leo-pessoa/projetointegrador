@@ -26,14 +26,43 @@ namespace WebAppCrudsPrj
         {
             Modelo.DetalheVenda iDet;
             DAL.DalClassDetalheVendas iDALClassDet;
-          
-            iDet = new Modelo.DetalheVenda(id, int.Parse(ddl1.Text), Convert.ToInt32(TextBoxQtd.Text));
-            
-            iDALClassDet = new DAL.DalClassDetalheVendas();
-            
-            iDALClassDet.Insert(iDet);
-            
-            Response.Redirect("~\\WebFormCRUDDetalheVenda.aspx");
+            try
+            {
+                iDet = new Modelo.DetalheVenda(id, int.Parse(ddl1.Text), Convert.ToInt32(TextBoxQtd.Text));
+
+                iDALClassDet = new DAL.DalClassDetalheVendas();
+
+                iDALClassDet.Insert(iDet);
+
+                Response.Redirect("~\\WebFormCRUDDetalheVenda.aspx");
+            }
+            catch
+            {
+                ScriptManager.RegisterStartupScript(this.Page,this.GetType(),"none", "ErroTamanhoExagerado()", true);
+            }
+
+        }
+
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Modelo.DetalheVenda iDet;
+            DAL.DalClassDetalheVendas iDALClassDet;
+            try
+            {
+                iDet = new Modelo.DetalheVenda(id, int.Parse(ddl1.Text), Convert.ToInt32(TextBoxQtd.Text));
+
+                iDALClassDet = new DAL.DalClassDetalheVendas();
+
+                iDALClassDet.Insert(iDet);
+
+                Response.Redirect("~\\WebFormVenda.aspx");
+            }
+            catch
+            {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
+            }
+
         }
 
 
