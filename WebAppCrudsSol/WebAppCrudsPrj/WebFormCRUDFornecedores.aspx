@@ -20,7 +20,7 @@
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="Código" SortExpression="id" />
-                    <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
+                    <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                     <asp:BoundField DataField="email" HeaderText="E-mail" SortExpression="email" />
                     <asp:BoundField DataField="telefone" HeaderText="Telefone" SortExpression="telefone" />
                     <asp:BoundField DataField="produto_fornecido" HeaderText="Produto Fornecido" SortExpression="produto_fornecido" />

@@ -18,7 +18,6 @@
       <a class="navbar-brand" href="WebFormMenu.aspx">SGED</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="WebFormMenu.aspx">Home</a></li>
       <li><a href="WebFormCRUDClientes.aspx">Cadastro de Clientes</a></li>
       <li><a href="WebFormCRUDFornecedores.aspx">Cadastro de Fornecedores</a></li>
       <li><a href="WebFormCRUDProdutos.aspx">Cadastro de Produtos</a></li>
@@ -37,7 +36,7 @@
     </form>
 
 
-    |<div id="footer">
+    carlinhosbolo<div id="footer">
     SGED™ 2018 Copyright
 </div>
 </body>

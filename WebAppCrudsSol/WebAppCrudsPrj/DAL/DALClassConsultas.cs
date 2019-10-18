@@ -55,5 +55,16 @@ namespace WebAppCrudsPrj.DAL
 
             return ds;
         }
+
+        public void UpdateDivida(int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = ("UPDATE Venda SET verif_pago = 1 WHERE id = "+id);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+        }
     }
 }

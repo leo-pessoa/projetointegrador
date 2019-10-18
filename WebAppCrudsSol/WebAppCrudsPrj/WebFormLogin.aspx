@@ -9,7 +9,7 @@
 
      <div class="container">
             <asp:Label ID="LabelMsgErro" runat="server" ForeColor="Red"></asp:Label>   
-             <label for="log_in"><b>Log_in</b></label>
+             <label for="log_in"><b>Usuário</b></label>
                 <asp:TextBox ID="TextBoxLogin" runat="server"></asp:TextBox>
 
              <label for="senha"><b>Senha</b></label>

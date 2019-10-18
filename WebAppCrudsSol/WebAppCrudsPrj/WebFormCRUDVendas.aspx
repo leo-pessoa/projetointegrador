@@ -21,10 +21,17 @@
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="Código" SortExpression="id" />
-                <asp:BoundField DataField="pago" HeaderText="Verificação" SortExpression="pago" />
+                <asp:TemplateField HeaderText="Verificação" SortExpression="pago">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("pago") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="LabelVerif" runat="server" Text='<%# Bind("pago") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="data_venda" HeaderText="Data" SortExpression="data_venda" DataFormatString="{0:d}" />
                 <asp:BoundField DataField="usuario_id" HeaderText="Cliente" SortExpression="usuario_id" />
-                <asp:ButtonField CommandName="Editar" Text="Editar" />
+                <asp:ButtonField CommandName="Finalizar" Text="Finalizar dívida" />
                 <asp:ButtonField CommandName="Detalhar" Text="Detalhar" />
             </Columns>
 <EditRowStyle BackColor="#2461BF" />

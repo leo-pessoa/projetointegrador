@@ -21,21 +21,16 @@ namespace WebAppCrudsPrj
         {
             try
             {
-                if (e.CommandName == "Editar")
+                if (e.CommandName == "Finalizar")
                 {
-                    string codigo;
-
-                    // Le o numero da linha selecionada
+                    int codigo;
+                    DAL.DALClassConsultas aDALClassConsultas;
                     int index = Convert.ToInt32(e.CommandArgument);
+                    codigo = Convert.ToInt32(GridView1.Rows[index].Cells[0].Text);
+                    aDALClassConsultas = new DAL.DALClassConsultas();
+                    aDALClassConsultas.UpdateDivida(codigo);
 
-                    // Copia o conteúdo da primeira célula da linha -> Código do Livro
-                    codigo = GridView1.Rows[index].Cells[0].Text;
-
-                    // Grava código do Livro na sessão
-                    Session["id"] = codigo;
-
-                    // Chama a tela de edição
-                    Response.Redirect("~\\WebFormCRUDVendasEdit.aspx");
+                    Response.Redirect("~\\WebFormCRUDVendas.aspx");
                 }
 
                 if (e.CommandName == "Detalhar")
