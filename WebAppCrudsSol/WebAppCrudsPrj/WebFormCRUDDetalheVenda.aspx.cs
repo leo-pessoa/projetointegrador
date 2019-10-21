@@ -52,13 +52,19 @@ namespace WebAppCrudsPrj
             DAL.DalClassDetalheVendas iDALClassDet;
             try
             {
-                iDet = new Modelo.DetalheVenda(id, int.Parse(ddl1.Text), Convert.ToInt32(TextBoxQtd.Text));
+                if(TextBoxQtd.Text != ""){
+                    iDet = new Modelo.DetalheVenda(id, int.Parse(ddl1.Text), Convert.ToInt32(TextBoxQtd.Text));
 
-                iDALClassDet = new DAL.DalClassDetalheVendas();
+                    iDALClassDet = new DAL.DalClassDetalheVendas();
 
-                iDALClassDet.Insert(iDet);
+                    iDALClassDet.Insert(iDet);
 
-                Response.Redirect("~\\WebFormVenda.aspx");
+                    Response.Redirect("~\\WebFormCRUDVendas.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~\\WebFormCRUDVendas.aspx");
+                }
             }
             catch
             {
