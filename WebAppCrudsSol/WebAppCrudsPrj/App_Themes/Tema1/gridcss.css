@@ -68,9 +68,9 @@ body {
 }
 
     .rows:hover {
-        background-color: #ff8000;
+        background-color: deeppink;
         font-family: 'Montserrat', sans-serif;
-        color: #fff;
+        color: green;
         text-align: left;
     }
 
@@ -91,8 +91,8 @@ body {
 }
 
     .mydatagrid a:hover  {
-        background-color: #000;
-        color: #fff;
+        background-color: ;
+        color: #000;
     }
 
 .mydatagrid span {
