@@ -33,9 +33,6 @@
               <label for="telefone"><b>Telefone </b></label>
                 <asp:TextBox ID="TextBoxTelefone" runat="server"></asp:TextBox>
 
-              <label for="produto_fornecido"><b>Produto Fornecido </b></label>
-                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="nome" DataValueField="id" >
-                </asp:DropDownList>
       
       
   

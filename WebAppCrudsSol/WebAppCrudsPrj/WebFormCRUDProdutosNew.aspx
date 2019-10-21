@@ -38,6 +38,8 @@
             <label for="quantity"><b>Quantidade </b></label>
             <asp:TextBox ID="TextBoxQtd" runat="server"></asp:TextBox>
       
+            <label for="quantity"><b>Quantidade </b></label>
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
       
   
           <div class="clearfix">

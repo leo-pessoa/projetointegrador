@@ -12,6 +12,7 @@ namespace WebAppCrudsPrj.Modelo
         public double valor { get; set; }
         public string descricao { get; set; }
         public int quantidade { get; set; }
+        public int fornecedor_id { get; set; }
 
         public Produtos()
         {
@@ -20,15 +21,17 @@ namespace WebAppCrudsPrj.Modelo
             this.valor = 0d;
             this.descricao = "";
             this.quantidade = 0;
+            this.fornecedor_id = 0;
         }
 
-        public Produtos(int aid, string anome, double avalor, string adescricao, int aquantidade)
+        public Produtos(int aid, string anome, double avalor, string adescricao, int aquantidade, int afornecedor_id)
         {
             this.id = aid;
             this.nome = anome;
             this.valor = avalor;
             this.descricao = adescricao;
             this.quantidade = aquantidade;
+            this.fornecedor_id = afornecedor_id;
         }
     }
 }

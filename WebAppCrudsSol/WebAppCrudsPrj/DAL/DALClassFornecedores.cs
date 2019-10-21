@@ -45,8 +45,7 @@ namespace WebAppCrudsPrj.DAL
                         Convert.ToInt32(dr["id"].ToString()),
                         dr["nome"].ToString(),
                         dr["email"].ToString(),
-                        dr["telefone"].ToString(),
-                        Convert.ToInt32(dr["produto_fornecido"].ToString())
+                        dr["telefone"].ToString() 
                         );
                     // Adiciona o livro lido à lista
                     aListFornecedores.Add(aFornecedores);
@@ -89,12 +88,11 @@ namespace WebAppCrudsPrj.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Fornecedor (id, nome, email, telefone, produto_fornecido) VALUES(@id, @nome, @email, @telefone, @produto_fornecido)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Fornecedor (id, nome, email, telefone) VALUES(@id, @nome, @email, @telefone)", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@email", obj.email);
             cmd.Parameters.AddWithValue("@telefone", obj.telefone);
-            cmd.Parameters.AddWithValue("@produto_fornecido", obj.produto_fornecido);
 
             // Executa Comando
             cmd.ExecuteNonQuery();
@@ -111,12 +109,11 @@ namespace WebAppCrudsPrj.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("UPDATE Fornecedor SET id = @id, nome = @nome, email = @email, telefone = @telefone, produto_fornecido = @produto_fornecido  WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Fornecedor SET id = @id, nome = @nome, email = @email, telefone = @telefone  WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@email", obj.email);
             cmd.Parameters.AddWithValue("@telefone", obj.telefone);
-            cmd.Parameters.AddWithValue("@produto_fornecido", obj.produto_fornecido);
 
 
             // Executa Comando
@@ -151,8 +148,7 @@ namespace WebAppCrudsPrj.DAL
                         Convert.ToInt32(dr["id"].ToString()),
                         dr["nome"].ToString(),
                         dr["email"].ToString(),
-                        dr["telefone"].ToString(),
-                        Convert.ToInt32(dr["produto_fornecido"].ToString())
+                        dr["telefone"].ToString()
                         );
                     // Adiciona o livro lido à lista
                     aListFornecedores.Add(aFornecedores);

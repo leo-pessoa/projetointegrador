@@ -11,7 +11,6 @@ namespace WebAppCrudsPrj.Modelo
         public string nome { get; set; }
         public string email { get; set; }
         public string telefone { get; set; }
-        public int produto_fornecido { get; set; }
 
         public Fornecedores()
         {
@@ -19,16 +18,14 @@ namespace WebAppCrudsPrj.Modelo
             this.nome = "";
             this.email = "";
             this.telefone = "";
-            this.produto_fornecido = 0;
         }
 
-        public Fornecedores(int aid, string anome, string aemail, string atelefone, int aproduto_fornecido)
+        public Fornecedores(int aid, string anome, string aemail, string atelefone)
         {
             this.id = aid;
             this.nome = anome;
             this.email = aemail;
             this.telefone = atelefone;
-            this.produto_fornecido = aproduto_fornecido;
         }
     }
 }
