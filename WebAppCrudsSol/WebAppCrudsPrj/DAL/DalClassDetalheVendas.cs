@@ -26,7 +26,7 @@ namespace WebAppCrudsPrj.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Detalhe_Venda (produto_id, venda_id, quantidadeprod) VALUES(@produto_id, @venda_id, @quantidadeprod)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Detalhe_Venda (venda_id, produto_id, quantidadeprod) VALUES(@venda_id, @produto_id, @quantidadeprod)", conn);
             cmd.Parameters.AddWithValue("@produto_id", obj.produto_id);
             cmd.Parameters.AddWithValue("@venda_id", obj.venda_id);
             cmd.Parameters.AddWithValue("@quantidadeprod", obj.quantidadeprod);
@@ -34,36 +34,6 @@ namespace WebAppCrudsPrj.DAL
 
             cmd.ExecuteNonQuery();
 
-        }
-
-        [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.DetalheVenda> Select(int id)
-        {
-
-            Modelo.DetalheVenda aVenda;
-            List<Modelo.DetalheVenda> aListVenda = new List<Modelo.DetalheVenda>();
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM etalhe_Venda";
-            cmd.Parameters.AddWithValue("@id", id);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                    aVenda = new Modelo.DetalheVenda(
-                        Convert.ToInt32(dr["produto_id"]),
-                         Convert.ToInt32(dr["venda_id"]),
-                         Convert.ToInt32(dr["quantidadeprod"])
-                        );
-                    aListVenda.Add(aVenda);
-                }
-
-            }
-            dr.Close();
-            conn.Close();
-            return aListVenda;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
@@ -75,7 +45,7 @@ namespace WebAppCrudsPrj.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM Venda";
+            cmd.CommandText = "SELECT * FROM Detalhe_Venda";
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
