@@ -13,15 +13,6 @@ namespace WebAppCrudsPrj {
     public partial class WebFormCRUDProdutosNew {
         
         /// <summary>
-        /// Controle TextBoxId.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxId;
-        
-        /// <summary>
         /// Controle TextBoxNome.
         /// </summary>
         /// <remarks>
@@ -58,13 +49,22 @@ namespace WebAppCrudsPrj {
         protected global::System.Web.UI.WebControls.TextBox TextBoxQtd;
         
         /// <summary>
-        /// Controle TextBox1.
+        /// Controle DropDownList1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        
+        /// <summary>
+        /// Controle ObjectDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
         
         /// <summary>
         /// Controle Button2.

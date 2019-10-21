@@ -28,7 +28,7 @@ namespace WebAppCrudsPrj
                 DAL.DALClassFornecedores iDALClassFornecedores;
 
 
-                iFornecedores = new Modelo.Fornecedores(int.Parse(TextBoxId.Text), TextBoxNome.Text, TextBoxEmail.Text, TextBoxTelefone.Text);
+                iFornecedores = new Modelo.Fornecedores(0, TextBoxNome.Text, TextBoxEmail.Text, TextBoxTelefone.Text);
 
 
                 iDALClassFornecedores = new DAL.DALClassFornecedores();

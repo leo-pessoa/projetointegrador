@@ -16,10 +16,10 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <div class="content">
+    <div class="content">
         <a href="WebFormCRUDProdutosNew.aspx" class="button2">Novo Produto</a>
        <br />
-            <asp:GridView  runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" ID="Grid1">
+            <asp:GridView  runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource2" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" ID="Grid1">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="Código" SortExpression="id" />
@@ -27,7 +27,7 @@
                     <asp:BoundField DataField="valor" DataFormatString="{0:f2}" HeaderText="Valor" SortExpression="valor" />
                     <asp:BoundField DataField="descricao" HeaderText="Descrição" SortExpression="descricao" />
                     <asp:BoundField DataField="quantidade" HeaderText="Quantidade" SortExpression="quantidade" />
-                    <asp:ButtonField CommandName="Editar" Text="Editar" />
+                    <asp:BoundField DataField="fornecedor_id" HeaderText="Código Fornecedor" SortExpression="fornecedor_id" />
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
@@ -40,6 +40,7 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
+            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos"></asp:ObjectDataSource>
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Produtos" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos" UpdateMethod="Update"></asp:ObjectDataSource>
             <br />
             

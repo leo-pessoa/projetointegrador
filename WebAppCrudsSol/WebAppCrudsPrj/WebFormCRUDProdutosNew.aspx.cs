@@ -24,7 +24,7 @@ namespace WebAppCrudsPrj
                 DAL.DALClassProdutos iDALClassProdutos;
 
 
-                iProdutos = new Modelo.Produtos(int.Parse(TextBoxId.Text), TextBoxNome.Text, double.Parse(TextBoxValor.Text), TextBoxDesc.Text, int.Parse(TextBoxQtd.Text));
+                iProdutos = new Modelo.Produtos(0, TextBoxNome.Text, double.Parse(TextBoxValor.Text), TextBoxDesc.Text, int.Parse(TextBoxQtd.Text), int.Parse(DropDownList1.Text));
 
 
                 iDALClassProdutos = new DAL.DALClassProdutos();

@@ -90,8 +90,7 @@ namespace WebAppCrudsPrj.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Produtos (id, nome, valor, descricao, quantidade, fornecedor_id) VALUES(@id,  @nome, @valor, @descricao, @quantidade, @fornecedor_id)", conn);
-            cmd.Parameters.AddWithValue("@id", obj.id);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Produtos (nome, valor, descricao, quantidade, fornecedor_id) VALUES(@nome, @valor, @descricao, @quantidade, @fornecedor_id)", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@valor", obj.valor);
             cmd.Parameters.AddWithValue("@descricao", obj.descricao);
@@ -113,7 +112,7 @@ namespace WebAppCrudsPrj.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("UPDATE Produtos SET id = @id, nome = @nome, valor = @valor, descricao = @descricao, quantidade = @quantidade, fornecedor_id = @fornecedor_id WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Produtos SET nome = @nome, valor = @valor, descricao = @descricao, quantidade = @quantidade, fornecedor_id = @fornecedor_id WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@valor", obj.valor);

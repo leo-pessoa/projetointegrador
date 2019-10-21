@@ -22,9 +22,7 @@
         <div class="container">
           <h1>Novo Produto</h1>
           <p>Preencha todos os campos</p>
-      
-              <label for="id"><b>ID</b></label>
-            <asp:TextBox ID="TextBoxId" runat="server"></asp:TextBox>
+
          
                          <label for="name"><b>Nome</b></label>
             <asp:TextBox ID="TextBoxNome" runat="server"></asp:TextBox>
@@ -38,8 +36,11 @@
             <label for="quantity"><b>Quantidade </b></label>
             <asp:TextBox ID="TextBoxQtd" runat="server"></asp:TextBox>
       
-            <label for="quantity"><b>Quantidade </b></label>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <label for="fornecedor"><b>Fornecedor</b></label>
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nome" DataValueField="id"></asp:DropDownList>
+      
+  
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DALClassFornecedores"></asp:ObjectDataSource>
       
   
           <div class="clearfix">
