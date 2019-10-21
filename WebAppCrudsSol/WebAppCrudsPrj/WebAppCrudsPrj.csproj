@@ -71,6 +71,7 @@
     <Content Include="img\beanstalk-dark.png" />
     <Content Include="Web.config" />
     <Content Include="WebFormConsultaCPF.aspx" />
+    <Content Include="WebFormCRUDDetalheVenda.aspx" />
     <Content Include="WebFormCRUDDetalheVendaEdit.aspx" />
     <Content Include="WebFormCRUDVendas.aspx" />
     <Content Include="WebFormCRUDVendasEdit.aspx" />
@@ -128,6 +129,13 @@
     </Compile>
     <Compile Include="WebFormConsultaCPF.aspx.designer.cs">
       <DependentUpon>WebFormConsultaCPF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCRUDDetalheVenda.aspx.cs">
+      <DependentUpon>WebFormCRUDDetalheVenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCRUDDetalheVenda.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDDetalheVenda.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormCRUDDetalheVendaEdit.aspx.cs">
       <DependentUpon>WebFormCRUDDetalheVendaEdit.aspx</DependentUpon>
