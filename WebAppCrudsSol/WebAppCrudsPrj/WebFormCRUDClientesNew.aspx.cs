@@ -20,8 +20,8 @@ namespace WebAppCrudsPrj
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            try
-            {
+            //try
+            //{
                 Modelo.Clientes iClientes;
                 DAL.DALClassClientes iDALClassClientes;
 
@@ -36,13 +36,13 @@ namespace WebAppCrudsPrj
 
 
                 Response.Redirect("~\\WebFormCRUDClientes.aspx");
-            }
+            //}
 
 
-            catch
-            {
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
-            }
+            //catch
+            //{
+            //    ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
+            //}
 
 
         }
