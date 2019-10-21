@@ -7,8 +7,6 @@ namespace WebAppCrudsPrj.Modelo
 {
     public class DetalheVenda
     {
-
-
             public int venda_id { get; set; }
             public int produto_id { get; set; }
             public int quantidadeprod { get; set; }
