@@ -45,6 +45,11 @@ body {
     border: none 0px transparent;
     min-width: 80%;
 }
+.mydatagrid2 {
+    width: 20%;
+    border: none 0px transparent;
+    min-width: 80%;
+}
 
 .header {
     border-radius: 0px;
