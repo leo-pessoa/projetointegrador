@@ -48,7 +48,7 @@ namespace WebAppCrudsPrj.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = ("SELECT	SUM(p.valor*dv.quantidadeprod) AS Valor_Total FROM Detalhe_Venda dv INNER JOIN Venda v ON v.id = dv.venda_id INNER JOIN Produtos p ON p.id = dv.produto_id WHERE dv.venda_id = "+id);
+            cmd.CommandText = ("SELECT	SUM(p.valor*dv.quantidadeprod) AS Subtotal FROM Detalhe_Venda dv INNER JOIN Venda v ON v.id = dv.venda_id INNER JOIN Produtos p ON p.id = dv.produto_id WHERE dv.venda_id = "+id);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);

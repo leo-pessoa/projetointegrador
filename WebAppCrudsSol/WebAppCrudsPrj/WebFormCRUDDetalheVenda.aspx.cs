@@ -52,7 +52,8 @@ namespace WebAppCrudsPrj
             DAL.DalClassDetalheVendas iDALClassDet;
             try
             {
-                if(TextBoxQtd.Text != ""){
+                if(TextBoxQtd.Text != "")
+                {
                     iDet = new Modelo.DetalheVenda(id, int.Parse(ddl1.Text), Convert.ToInt32(TextBoxQtd.Text));
 
                     iDALClassDet = new DAL.DalClassDetalheVendas();
