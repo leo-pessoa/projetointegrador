@@ -132,6 +132,7 @@
     </Compile>
     <Compile Include="WebFormCRUDDetalheVenda.aspx.cs">
       <DependentUpon>WebFormCRUDDetalheVenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebFormCRUDDetalheVenda.aspx.designer.cs">
       <DependentUpon>WebFormCRUDDetalheVenda.aspx</DependentUpon>
