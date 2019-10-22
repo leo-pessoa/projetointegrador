@@ -23,6 +23,7 @@
                     <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                     <asp:BoundField DataField="email" HeaderText="Email" SortExpression="email" />
                     <asp:BoundField DataField="telefone" HeaderText="Telefone" SortExpression="telefone" />
+                    <asp:ButtonField CommandName="Editar" Text="Editar" />
                 </Columns>
               <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />

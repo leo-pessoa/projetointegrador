@@ -18,8 +18,8 @@
       <a class="navbar-brand" href="WebFormMenu1.aspx">SGED</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="WebFormLogin.aspx">Login</a></li>
       <li><a href="WebFormConsultaCPF.aspx">Consulta Dívidas</a></li>
+        <li><a href="WebFormLogin.aspx">Login</a></li>
     </ul>
       
   </div>

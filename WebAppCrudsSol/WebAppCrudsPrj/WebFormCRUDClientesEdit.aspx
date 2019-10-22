@@ -63,6 +63,7 @@
                     <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
                 </SelectParameters>
             </asp:ObjectDataSource>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormCRUDClientes.aspx">Voltar</asp:HyperLink>
         </div>
 
 </asp:Content>

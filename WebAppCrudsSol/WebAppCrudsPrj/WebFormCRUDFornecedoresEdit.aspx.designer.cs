@@ -22,6 +22,15 @@ namespace WebAppCrudsPrj {
         protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
         
         /// <summary>
+        /// Controle ObjectDataSource2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
+        
+        /// <summary>
         /// Controle ObjectDataSource1.
         /// </summary>
         /// <remarks>
@@ -29,5 +38,14 @@ namespace WebAppCrudsPrj {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        
+        /// <summary>
+        /// Controle HyperLink1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
     }
 }

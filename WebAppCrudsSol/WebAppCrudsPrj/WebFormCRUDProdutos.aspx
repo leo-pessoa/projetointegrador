@@ -28,6 +28,7 @@
                     <asp:BoundField DataField="descricao" HeaderText="Descrição" SortExpression="descricao" />
                     <asp:BoundField DataField="quantidade" HeaderText="Quantidade" SortExpression="quantidade" />
                     <asp:BoundField DataField="fornecedor_id" HeaderText="Código Fornecedor" SortExpression="fornecedor_id" />
+                    <asp:ButtonField CommandName="Editar" Text="Editar" />
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
