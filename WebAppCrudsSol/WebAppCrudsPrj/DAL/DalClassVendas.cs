@@ -26,8 +26,7 @@ namespace WebAppCrudsPrj.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Venda (verif_pago, data_venda, usuario_id) VALUES(@id, @verif_pago, @data_venda, @usuario_id)", conn);
-            cmd.Parameters.AddWithValue("@id", obj.id);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Venda (verif_pago, data_venda, usuario_id) VALUES(@verif_pago, @data_venda, @usuario_id)", conn);
             cmd.Parameters.AddWithValue("@verif_pago", obj.pago);
             cmd.Parameters.AddWithValue("@data_venda", obj.data_venda);
             cmd.Parameters.AddWithValue("@usuario_id", obj.usuario_id);
@@ -98,6 +97,32 @@ namespace WebAppCrudsPrj.DAL
             return aListVenda;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public string SelectId()
+        {
+            string id="";
+            Modelo.Venda aVenda;
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "SELECT TOP 1 (id) FROM Venda ORDER BY id DESC";
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    id = Convert.ToInt32(dr["id"]).ToString();
+                }
+
+            }
+            dr.Close();
+            conn.Close();
+            return id;
+        }
+
+
+
+
         [DataObjectMethod(DataObjectMethodType.Delete)]
         public void Delete(Modelo.Venda obj)
         {
@@ -130,5 +155,15 @@ namespace WebAppCrudsPrj.DAL
             // Executa Comando
             cmd.ExecuteNonQuery();
         }
+
+
+
+
+
+
+
+
     }
+
+
 }
