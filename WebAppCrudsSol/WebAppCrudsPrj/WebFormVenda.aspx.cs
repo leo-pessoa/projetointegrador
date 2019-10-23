@@ -46,7 +46,7 @@ namespace WebAppCrudsPrj
             iDALClassProdutos.Insert(iProdutos);
 
 
-            int sessao = int.Parse(iDALClassProdutos.SelectId());
+            int sessao = Convert.ToInt32(iDALClassProdutos.SelectId().ToString());
             Session["id"] = sessao;
 
             Response.Redirect("~\\WebFormCRUDDetalheVenda.aspx");
