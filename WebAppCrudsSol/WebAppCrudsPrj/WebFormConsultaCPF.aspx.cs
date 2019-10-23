@@ -33,6 +33,8 @@ namespace WebAppCrudsPrj
                 Response.Redirect("~\\WebFormConsultaCPF.aspx");
             }
 
+            Session["msgErro"] = null;
+
         }
     }
 }

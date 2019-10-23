@@ -11,10 +11,6 @@ namespace WebAppCrudsPrj
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((Session["msgErro"] != null) && (Session["msgErro"].ToString() != ""))
-            {
-                LabelMsgErro.Text = Session["msgErro"].ToString();
-            }
         }
 
         protected void ButtonSalvar_Click(object sender, EventArgs e)

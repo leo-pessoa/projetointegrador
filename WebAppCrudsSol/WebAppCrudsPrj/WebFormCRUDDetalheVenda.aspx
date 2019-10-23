@@ -25,11 +25,12 @@
                 <asp:TextBox ID="TextBoxQtd" runat="server" ></asp:TextBox>
             <asp:Button ID="Button1" runat="server" Text="Próximo Produto" OnClick="Button1_Click" />
             <asp:Button ID="Button2" runat="server" Text="Finalizar Venda" OnClick="Button2_Click" />
-    </div>
-</div>
+
     <br />
+            <br />
+            <br />
 <div class="mostragem">
-    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource4" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource4" ForeColor="#333333" GridLines="None" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:TemplateField HeaderText="Produto" SortExpression="produto_id">
@@ -44,16 +45,14 @@
             <asp:ButtonField CommandName="Editar" Text="Editar" />
             <asp:ButtonField CommandName="Excluir" Text="Excluir" />
         </Columns>
-        <EditRowStyle BackColor="#2461BF" />
-        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#EFF3FB" />
-        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-        <SortedAscendingCellStyle BackColor="#F5F7FB" />
-        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-        <SortedDescendingCellStyle BackColor="#E9EBEF" />
-        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#000000" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#eaeaea" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                <SortedDescendingCellStyle BackColor="#E9EBEF" />
     </asp:GridView>
     <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DalClassDetalheVendas">
         <SelectParameters>
@@ -61,18 +60,15 @@
         </SelectParameters>
     </asp:ObjectDataSource>
     <br />
-    <asp:GridView ID="GridView1" runat="server" CellPadding="4" DataSourceID="ObjectDataSource3" ForeColor="#333333" GridLines="None">
-        <AlternatingRowStyle BackColor="White" />
-        <EditRowStyle BackColor="#2461BF" />
-        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#EFF3FB" />
-        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-        <SortedAscendingCellStyle BackColor="#F5F7FB" />
-        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-        <SortedDescendingCellStyle BackColor="#E9EBEF" />
-        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+    <asp:GridView ID="GridView1" runat="server" CellPadding="4" DataSourceID="ObjectDataSource3" ForeColor="#333333" GridLines="None" CssClass="mydatagrid2" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows2">
+                <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#000000" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#eaeaea" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                <SortedDescendingCellStyle BackColor="#E9EBEF" />
     </asp:GridView>
     <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="SelectVtotal" TypeName="WebAppCrudsPrj.DAL.DALClassConsultas">
         <SelectParameters>
@@ -80,6 +76,7 @@
         </SelectParameters>
     </asp:ObjectDataSource>
 </div>
-
+        </div>
+</div>
 
     </asp:Content>

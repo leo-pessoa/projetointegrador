@@ -48,7 +48,7 @@ body {
 .mydatagrid2 {
     width: 20%;
     border: none 0px transparent;
-    min-width: 80%;
+
 }
 
 .header {
@@ -69,6 +69,17 @@ body {
     color: #000;
     min-height: 25px;
     text-align: left;
+    border: none 0px transparent;
+}
+
+
+.rows2 {
+    text-align: center;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #000;
+    min-height: 25px;
     border: none 0px transparent;
 }
 
@@ -96,7 +107,7 @@ body {
 }
 
     .mydatagrid a:hover  {
-        background-color: ;
+        background-color: white;
         color: #000;
     }
 
