@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,10 +9,8 @@ namespace WebAppCrudsPrj
 {
     public partial class WebFormCadastrar : System.Web.UI.Page
     {
-        
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if ((Session["msgErro"] != null) && (Session["msgErro"].ToString() != ""))
             {
                 LabelMsgErro.Text = Session["msgErro"].ToString();
@@ -27,21 +24,18 @@ namespace WebAppCrudsPrj
         }
 
         protected void ButtonSalvar_Click(object sender, EventArgs e)
-        {             
-            DAL.DALClassUsuarios aDALClassUsuarios = new DAL.DALClassUsuarios();
-            Modelo.Usuarios aUsuario = new Modelo.Usuarios(0, TextBoxNome.Text, TextBoxLogin.Text, TextBoxSenha.Text, TextBoxPerfil.Text);
-
-            try
+        {
+            if (TextBoxSenha.Text != TextBoxConfirmaSenha.Text)
             {
-                aDALClassUsuarios.Insert(aUsuario);
+                Session["msgErro"] = "Senha não confere";
+                Response.Redirect("~\\WebFormCadastrar.aspx");
             }
-            catch (SqlException error) {
-                if (error.Message.Contains("usuario incorreto")) Session["MsgErro"] = "usuario incorreto";
-            }
+            Session["msgErro"] = "";
 
-
+            DAL.DALClassUsuarios aDALClassUsuarios = new DAL.DALClassUsuarios();
+            Modelo.Usuarios aUsuario = new Modelo.Usuarios(int.Parse(TextBoxId.Text), TextBoxNome.Text, TextBoxLogin.Text, TextBoxSenha.Text, TextBoxPerfil.Text);
+            aDALClassUsuarios.Insert(aUsuario);
             Response.Redirect("~\\WebFormCadastrar.aspx");
-            
 
         }
 

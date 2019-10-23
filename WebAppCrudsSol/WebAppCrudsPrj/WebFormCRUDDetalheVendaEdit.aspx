@@ -23,9 +23,9 @@
             <asp:SessionParameter Name="id" SessionField="id_de" Type="Int32" />
         </SelectParameters>
     </asp:ObjectDataSource>
-    <asp:GridView ID="GridView2" runat="server" DataSourceID="ObjectDataSource2" CellPadding="4" ForeColor="#333333" GridLines="None"  CssClass="mydatagrid2" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows2" Width="154px">
+    <asp:GridView ID="GridView2" runat="server" DataSourceID="ObjectDataSource2" CellPadding="4" ForeColor="#333333" GridLines="None"  CssClass="mydatagrid2" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="154px">
         <EditRowStyle BackColor="#2461BF" />
-               <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
+                <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="#000000" ForeColor="White" HorizontalAlign="Center" />
                 <RowStyle BackColor="#eaeaea" />
