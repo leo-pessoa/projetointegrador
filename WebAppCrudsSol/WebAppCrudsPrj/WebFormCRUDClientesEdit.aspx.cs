@@ -20,8 +20,8 @@ namespace WebAppCrudsPrj
         protected void ObjectDataSource1_Deleted(object sender, ObjectDataSourceStatusEventArgs e)
         {
 
-            try
-            {
+            //try
+            //{
                 int codigo;
                 Modelo.Clientes aClientes;
                 DAL.DALClassClientes aDALClassClientes;
@@ -37,12 +37,11 @@ namespace WebAppCrudsPrj
 
                 Response.Redirect("~\\WebFormCRUDClientes.aspx");
             }
-            catch
-            {
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
-            }
+            //catch
+            //{
+            //    ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
+            //}
 
 
         }
     }
-}

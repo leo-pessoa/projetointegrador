@@ -41,8 +41,8 @@
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="quantidadeprod" HeaderText="Quantidade" SortExpression="quantidadeprod" />
-            <asp:ButtonField CommandName="Editar" Text="Editar" />
-            <asp:ButtonField CommandName="Excluir" Text="Excluir" />
+            <asp:CommandField ShowEditButton="true" />  
+            <asp:CommandField ShowDeleteButton="true" />
         </Columns>
         <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

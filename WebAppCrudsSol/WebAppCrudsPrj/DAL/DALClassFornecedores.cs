@@ -88,7 +88,7 @@ namespace WebAppCrudsPrj.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Fornecedor  (nome, email, telefone) VALUES(@nome, @email, @telefone)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Fornecedor (nome, email, telefone) VALUES(@nome, @email, @telefone)", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@email", obj.email);
             cmd.Parameters.AddWithValue("@telefone", obj.telefone);
@@ -109,6 +109,7 @@ namespace WebAppCrudsPrj.DAL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
             SqlCommand cmd = new SqlCommand("UPDATE Fornecedor SET nome = @nome, email = @email, telefone = @telefone  WHERE id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@email", obj.email);
             cmd.Parameters.AddWithValue("@telefone", obj.telefone);

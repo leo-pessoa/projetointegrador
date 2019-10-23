@@ -26,7 +26,7 @@ namespace WebAppCrudsPrj.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Venda (id, verif_pago, data_venda, usuario_id) VALUES(@id, @verif_pago, @data_venda, @usuario_id)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Venda (verif_pago, data_venda, usuario_id) VALUES(@id, @verif_pago, @data_venda, @usuario_id)", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@verif_pago", obj.pago);
             cmd.Parameters.AddWithValue("@data_venda", obj.data_venda);
@@ -121,7 +121,7 @@ namespace WebAppCrudsPrj.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("UPDATE Venda SET id = @id, verif_pago = @verif_pago, data_venda = @data_venda, usuario_id = @usuario_id  WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Venda SET verif_pago = @verif_pago, data_venda = @data_venda, usuario_id = @usuario_id  WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@verif_pago", obj.pago);
             cmd.Parameters.AddWithValue("@data_venda", obj.data_venda);

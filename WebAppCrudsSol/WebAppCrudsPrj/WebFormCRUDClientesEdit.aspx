@@ -4,11 +4,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link href="CSS/gridcss.css" rel="stylesheet" />
-    <style type="text/css">
-        .auto-style1 {
-            margin-bottom: 0px;
-        }
-    </style>
 
         <script>
         function ErroTamanhoExagerado() {
@@ -27,7 +22,14 @@
                 <EditRowStyle BackColor="#dadada" />
                 <FieldHeaderStyle BackColor="#dadada" Font-Bold="True" />
                 <Fields>
-                    <asp:BoundField DataField="id" HeaderText="Código" SortExpression="id" />
+                    <asp:TemplateField HeaderText="Código" >
+                        <InsertItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("id") %>'></asp:TextBox>
+                        </InsertItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("id") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                     <asp:TemplateField HeaderText="CPF" SortExpression="cpf">
                         <EditItemTemplate>
@@ -42,7 +44,6 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Perfil" SortExpression="perfil">
                         <EditItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("perfil") %>' ></asp:Label>
                         </EditItemTemplate>
                         <InsertItemTemplate>
                             <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("perfil") %>'></asp:TextBox>

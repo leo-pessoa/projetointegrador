@@ -27,7 +27,7 @@ namespace WebAppCrudsPrj.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Usuario (id, nome, log_in, senha, perfil) VALUES(@id, @nome, @log_in, @senha, @perfil)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Usuario (nome, log_in, senha, perfil) VALUES(@nome, @log_in, @senha, @perfil)", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@log_in", obj.log_in);

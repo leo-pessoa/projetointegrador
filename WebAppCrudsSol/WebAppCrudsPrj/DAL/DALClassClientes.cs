@@ -83,7 +83,7 @@ namespace WebAppCrudsPrj.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Usuario SET id = @id, nome = @nome, cpf = @cpf, perfil = @perfil WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Usuario SET nome = @nome, cpf = @cpf, perfil = @perfil WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@cpf", obj.cpf);
