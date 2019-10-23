@@ -16,8 +16,8 @@
             </SelectParameters>
     </asp:ObjectDataSource>
          <br />
-        <label for="id"><b>ID da Venda</b></label>
-    <asp:TextBox ID="TextBoxId" runat="server"></asp:TextBox>
+
+
         
          
     <label for="pago"><b>Pago</b></label><br />

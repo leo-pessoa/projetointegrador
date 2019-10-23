@@ -23,8 +23,7 @@ namespace WebAppCrudsPrj
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            int sessao = int.Parse(TextBoxId.Text);
-            Session["id"] = sessao;
+
 
             Modelo.Venda iProdutos;
             DAL.DalClassVendas iDALClassProdutos;
@@ -38,7 +37,7 @@ namespace WebAppCrudsPrj
                 pago = 0;
             }
 
-            iProdutos = new Modelo.Venda(int.Parse(TextBoxId.Text), pago, Convert.ToDateTime(TextBoxdate.Text).Date, int.Parse(ListBox1.Text));
+            iProdutos = new Modelo.Venda(0, pago, Convert.ToDateTime(TextBoxdate.Text).Date, int.Parse(ListBox1.Text));
 
 
             iDALClassProdutos = new DAL.DalClassVendas();
@@ -46,6 +45,9 @@ namespace WebAppCrudsPrj
 
             iDALClassProdutos.Insert(iProdutos);
 
+
+            int sessao = int.Parse(iDALClassProdutos.SelectId());
+            Session["id"] = sessao;
 
             Response.Redirect("~\\WebFormCRUDDetalheVenda.aspx");
         }
