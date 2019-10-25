@@ -37,7 +37,7 @@
                     <asp:BoundField DataField="quantidade" HeaderText="Quantidade" SortExpression="quantidade" />
                     <asp:TemplateField HeaderText="Fornecedor" SortExpression="fornecedor_id">
                         <EditItemTemplate>
-                            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="nome" DataValueField="id">
+                            <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource1" DataTextField="nome" DataValueField="id">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SGEDConnectionString %>" SelectCommand="SELECT [nome], [id] FROM [Fornecedor]"></asp:SqlDataSource>
                         </EditItemTemplate>
@@ -60,17 +60,6 @@
                       <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
                   </SelectParameters>
               </asp:ObjectDataSource>
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Produtos" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos" UpdateMethod="Update" OnDeleted="ObjectDataSource1_Deleted">
-                <InsertParameters>
-                    <asp:Parameter DbType="Double" Name="valor" />
-                </InsertParameters>
-                <SelectParameters>
-                    <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
-                </SelectParameters>
-                <UpdateParameters>
-                    <asp:Parameter DbType="Double" Name="valor" />
-                </UpdateParameters>
-            </asp:ObjectDataSource>
               <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormCRUDProdutos.aspx">Voltar</asp:HyperLink>
 
         </div>         
