@@ -24,14 +24,7 @@
                 <EditRowStyle BackColor="#dadada" />
                 <FieldHeaderStyle BackColor="#dadada" Font-Bold="True" />
                 <Fields>
-                    <asp:TemplateField HeaderText="Código" SortExpression="id">
-                        <InsertItemTemplate>
-                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("id") %>'></asp:TextBox>
-                        </InsertItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("id") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                    <asp:BoundField DataField="id" HeaderText="Código" SortExpression="id" />
                     <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                     <asp:BoundField DataField="email" HeaderText="E-mail" SortExpression="email" />
                     <asp:BoundField DataField="telefone" HeaderText="Telefone" SortExpression="telefone" />
@@ -47,11 +40,6 @@
                          <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
                      </SelectParameters>
                  </asp:ObjectDataSource>
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Fornecedores" DeleteMethod="Delete" InsertMethod="Insert" OnDeleted="ObjectDataSource1_Deleted" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassFornecedores" UpdateMethod="Update">
-                <SelectParameters>
-                    <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormCRUDFornecedores.aspx">Voltar</asp:HyperLink>
         </div>   
 </asp:Content>

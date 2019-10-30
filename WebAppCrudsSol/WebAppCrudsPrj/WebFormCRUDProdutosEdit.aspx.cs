@@ -17,7 +17,7 @@ namespace WebAppCrudsPrj
             }
         }
 
-        protected void ObjectDataSource1_Deleted(object sender, ObjectDataSourceStatusEventArgs e)
+        protected void ObjectDataSource2_Deleting(object sender, ObjectDataSourceStatusEventArgs e)
         {
             try
             {

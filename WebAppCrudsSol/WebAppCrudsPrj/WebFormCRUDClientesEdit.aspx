@@ -23,6 +23,9 @@
                 <FieldHeaderStyle BackColor="#dadada" Font-Bold="True" />
                 <Fields>
                     <asp:TemplateField HeaderText="Código" >
+                        <EditItemTemplate>
+                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("id") %>'></asp:Label>
+                        </EditItemTemplate>
                         <InsertItemTemplate>
                             <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("id") %>'></asp:TextBox>
                         </InsertItemTemplate>

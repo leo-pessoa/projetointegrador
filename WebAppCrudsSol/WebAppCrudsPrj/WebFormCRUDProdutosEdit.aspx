@@ -24,6 +24,9 @@
                 <FieldHeaderStyle BackColor="#dadada" Font-Bold="True" />
                 <Fields>
                     <asp:TemplateField HeaderText="Código" SortExpression="id">
+                        <EditItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Bind("id") %>'></asp:Label>
+                        </EditItemTemplate>
                         <InsertItemTemplate>
                             <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("id") %>'></asp:TextBox>
                         </InsertItemTemplate>
@@ -37,9 +40,9 @@
                     <asp:BoundField DataField="quantidade" HeaderText="Quantidade" SortExpression="quantidade" />
                     <asp:TemplateField HeaderText="Fornecedor" SortExpression="fornecedor_id">
                         <EditItemTemplate>
-                            <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource1" DataTextField="nome" DataValueField="id">
+                            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="nome" DataValueField="id" SelectedValue='<%# Bind("fornecedor_id") %>'>
                             </asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SGEDConnectionString %>" SelectCommand="SELECT [nome], [id] FROM [Fornecedor]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SGEDConnectionString %>" SelectCommand="SELECT [id], [nome] FROM [Fornecedor]"></asp:SqlDataSource>
                         </EditItemTemplate>
                         <InsertItemTemplate>
                             <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("fornecedor_id") %>'></asp:TextBox>

@@ -66,5 +66,18 @@ namespace WebAppCrudsPrj.DAL
             DataSet ds = new DataSet();
             da.Fill(ds);
         }
+
+        public DataSet SelectProdutosDisp()
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = ("SELECT p.nome AS Nome, p.descricao AS Descrição, p.valor AS Valor, p.quantidade AS Quantidade  FROM Produtos p  WHERE p.quantidade != 0 ORDER BY p.nome ASC");
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            return ds;
+        }
     }
 }

@@ -10,10 +10,12 @@
          <h1 style="color:whitesmoke">Seja Bem-Vindo, à nossa Loja!</h1>
          <h4 style="color:whitesmoke">Nossa equipe preparou uma incrível lista de produtos disponíveis no dia de Hoje</h4>
          <br />
-         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows">
+         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource2" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="302px">
              <Columns>
                  <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                  <asp:BoundField DataField="descricao" HeaderText="Descrição" SortExpression="descricao" />
+                 <asp:BoundField DataField="valor" HeaderText="Valor" SortExpression="valor" />
+                 <asp:BoundField DataField="quantidade" HeaderText="Quantidade" SortExpression="quantidade" />
              </Columns>
              <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
@@ -27,7 +29,7 @@
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
          </asp:GridView>
          
-         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos"></asp:ObjectDataSource>
+         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos"></asp:ObjectDataSource>
          
      </div>
 </asp:Content>

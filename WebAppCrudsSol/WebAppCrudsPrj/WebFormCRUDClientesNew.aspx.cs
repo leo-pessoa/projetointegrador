@@ -26,7 +26,7 @@ namespace WebAppCrudsPrj
                 DAL.DALClassClientes iDALClassClientes;
 
 
-                iClientes = new Modelo.Clientes(int.Parse(TextBoxId.Text), TextBoxNome.Text, TextBoxCPF.Text, TextBoxPerfil.Text);
+                iClientes = new Modelo.Clientes(0, TextBoxNome.Text, TextBoxCPF.Text, TextBoxPerfil.Text);
 
 
                 iDALClassClientes = new DAL.DALClassClientes();
