@@ -51,7 +51,7 @@
                             <asp:Label ID="Label2" runat="server" Text='<%# Bind("fornecedor_id") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                    <asp:CommandField ShowEditButton="True" />
                 </Fields>
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
