@@ -35,7 +35,7 @@
                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                 <RowStyle BackColor="#EFF3FB" />
             </asp:DetailsView>
-                 <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Fornecedores" DeleteMethod="Delete" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassFornecedores" UpdateMethod="Update">
+                 <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Fornecedores" DeleteMethod="Delete" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassFornecedores" UpdateMethod="Update" OnDeleted="ObjectDataSource2_Deleted">
                      <SelectParameters>
                          <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
                      </SelectParameters>

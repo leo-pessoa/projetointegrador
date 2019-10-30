@@ -19,9 +19,8 @@ namespace WebAppCrudsPrj
             }
         }
 
-        protected void ObjectDataSource2_Deleting(object sender, ObjectDataSourceStatusEventArgs e)
+        protected void ObjectDataSource2_Deleted(object sender, ObjectDataSourceStatusEventArgs e)
         {
-
             try
             {
                 int codigo;
@@ -47,11 +46,6 @@ namespace WebAppCrudsPrj
             {
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
             }
-
-
-
-
         }
-
     }
 }

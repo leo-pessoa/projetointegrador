@@ -35,7 +35,7 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
-                    <asp:BoundField DataField="valor" HeaderText="Valor" SortExpression="valor" />
+                    <asp:BoundField DataField="valor" DataFormatString="{0:f2}" HeaderText="Valor" SortExpression="valor" />
                     <asp:BoundField DataField="descricao" HeaderText="Descrição" SortExpression="descricao" />
                     <asp:BoundField DataField="quantidade" HeaderText="Quantidade" SortExpression="quantidade" />
                     <asp:TemplateField HeaderText="Fornecedor" SortExpression="fornecedor_id">
@@ -58,10 +58,16 @@
                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                 <RowStyle BackColor="#EFF3FB" />
             </asp:DetailsView>
-              <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Produtos" DeleteMethod="Delete" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos" UpdateMethod="Update">
+              <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Produtos" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos" UpdateMethod="Update">
+                  <InsertParameters>
+                      <asp:Parameter DbType="Double" Name="valor" />
+                  </InsertParameters>
                   <SelectParameters>
                       <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
                   </SelectParameters>
+                  <UpdateParameters>
+                      <asp:Parameter DbType="Double" Name="valor" />
+                  </UpdateParameters>
               </asp:ObjectDataSource>
               <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/WebFormCRUDProdutos.aspx">Voltar</asp:HyperLink>
 

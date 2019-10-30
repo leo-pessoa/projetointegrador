@@ -22,39 +22,10 @@
                 <EditRowStyle BackColor="#dadada" />
                 <FieldHeaderStyle BackColor="#dadada" Font-Bold="True" />
                 <Fields>
-                    <asp:TemplateField HeaderText="Código" >
-                        <EditItemTemplate>
-                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("id") %>'></asp:Label>
-                        </EditItemTemplate>
-                        <InsertItemTemplate>
-                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("id") %>'></asp:TextBox>
-                        </InsertItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("id") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
-                    <asp:TemplateField HeaderText="CPF" SortExpression="cpf">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("cpf") %>' MaxLength="11"></asp:TextBox>
-                        </EditItemTemplate>
-                        <InsertItemTemplate>
-                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("cpf") %>'></asp:TextBox>
-                        </InsertItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("cpf") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Perfil" SortExpression="perfil">
-                        <EditItemTemplate>
-                        </EditItemTemplate>
-                        <InsertItemTemplate>
-                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("perfil") %>'></asp:TextBox>
-                        </InsertItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Bind("perfil") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                    <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
+                    <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
+                    <asp:BoundField DataField="cpf" HeaderText="cpf" SortExpression="cpf" />
+                    <asp:BoundField DataField="perfil" HeaderText="perfil" SortExpression="perfil" />
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 </Fields>
                 <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
@@ -62,7 +33,7 @@
                 <PagerStyle BackColor="#2461BF" ForeColor="black" HorizontalAlign="Center" />
                 <RowStyle BackColor="#ffffff" />
             </asp:DetailsView>
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Clientes" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassClientes" UpdateMethod="Update" OnDeleted="ObjectDataSource1_Deleted">
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCrudsPrj.Modelo.Clientes" DeleteMethod="Delete" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassClientes" UpdateMethod="Update" OnDeleted="ObjectDataSource1_Deleted">
                 <SelectParameters>
                     <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
                 </SelectParameters>

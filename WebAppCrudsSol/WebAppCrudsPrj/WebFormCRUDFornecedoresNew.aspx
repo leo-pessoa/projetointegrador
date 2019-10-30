@@ -20,8 +20,7 @@
             <div class="container">
               <h1>Novo Fornecedor</h1>
               <p>Preencha todos os campos</p>
-      
-         
+
               <label for="name"><b>Nome</b></label>
                <asp:TextBox ID="TextBoxNome" runat="server"></asp:TextBox>
           
