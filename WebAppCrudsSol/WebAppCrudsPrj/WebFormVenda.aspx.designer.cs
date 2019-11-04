@@ -49,15 +49,6 @@ namespace WebAppCrudsPrj {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource7;
         
         /// <summary>
-        /// Controle TextBoxId.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxId;
-        
-        /// <summary>
         /// Controle DropDownList1.
         /// </summary>
         /// <remarks>

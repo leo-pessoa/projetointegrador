@@ -5,6 +5,7 @@
     <div class="container">
     <h1>Nova Venda</h1>
     <p>Preencha todos os campos</p>
+        <br />
           <label for="cliente"><b>Selecionar Cliente</b></label>
     <asp:TextBox runat="server" ID="cliente" />
     <asp:Button Text="Pesquisar" ID="buttonp" runat="server" />
@@ -16,8 +17,6 @@
             </SelectParameters>
     </asp:ObjectDataSource>
          <br />
-        <label for="id"><b>ID da Venda</b></label>
-    <asp:TextBox ID="TextBoxId" runat="server"></asp:TextBox>
         
          
     <label for="pago"><b>Pago</b></label><br />
