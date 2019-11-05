@@ -23,6 +23,7 @@
       <li><a href="WebFormCRUDProdutos.aspx">Cadastro de Produtos</a></li>
       <li><a href="WebFormCadastrar.aspx">Cadastro de Usuários</a></li>
       <li><a href="WebFormCRUDVendas.aspx">Venda</a></li>
+      <li><a href="WebFormMenu1.aspx">Sair</a></li>
     </ul>
       
   </div>
