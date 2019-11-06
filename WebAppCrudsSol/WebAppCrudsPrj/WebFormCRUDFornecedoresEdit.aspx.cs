@@ -26,18 +26,10 @@ namespace WebAppCrudsPrj
                 int codigo;
                 Modelo.Fornecedores aFornecedores;
                 DAL.DALClassFornecedores aDALClassFornecedores;
-
-                // Copia o conteúdo da primeira célula da linha -> Código do Livro
                 codigo = int.Parse(DetailsView1.Rows[0].Cells[1].Text);
-
-                // Instancia um Objeto de Livro Vazio
                 aFornecedores = new Modelo.Fornecedores();
-                aFornecedores.id = codigo; ;// Atribui apenas o ID
-
-                // Instancia objeto da camada de negocio
+                aFornecedores.id = codigo; ;
                 aDALClassFornecedores = new DAL.DALClassFornecedores();
-
-                // Chama metodo de delete passando o objeto apenas com o ID preenchido
                 aDALClassFornecedores.Delete(aFornecedores);
 
                 Response.Redirect("~\\WebFormCRUDFornecedores.aspx");

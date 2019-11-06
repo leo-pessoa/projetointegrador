@@ -27,8 +27,8 @@ namespace WebAppCrudsPrj.DAL
             conn.Open();
             SqlCommand com = conn.CreateCommand();
             SqlCommand cmd = new SqlCommand("INSERT INTO Detalhe_Venda (venda_id, produto_id, quantidadeprod) VALUES(@venda_id, @produto_id, @quantidadeprod)", conn);
-            cmd.Parameters.AddWithValue("@produto_id", obj.produto_id);
             cmd.Parameters.AddWithValue("@venda_id", obj.venda_id);
+            cmd.Parameters.AddWithValue("@produto_id", obj.produto_id);
             cmd.Parameters.AddWithValue("@quantidadeprod", obj.quantidadeprod);
 
 
@@ -71,8 +71,8 @@ namespace WebAppCrudsPrj.DAL
                 while (dr.Read())
                 {
                     aVenda = new Modelo.DetalheVenda(
+                        Convert.ToInt32(dr["venda_id"]),
                         Convert.ToInt32(dr["produto_id"]),
-                         Convert.ToInt32(dr["venda_id"]),
                          Convert.ToInt32(dr["quantidadeprod"])
                         );
                     aListVenda.Add(aVenda);
@@ -101,8 +101,8 @@ namespace WebAppCrudsPrj.DAL
                 while (dr.Read())
                 {
                     aVenda = new Modelo.DetalheVenda(
+                        Convert.ToInt32(dr["venda_id"]),
                         Convert.ToInt32(dr["produto_id"]),
-                         Convert.ToInt32(dr["venda_id"]),
                          Convert.ToInt32(dr["quantidadeprod"])
                         );
                     aListVenda.Add(aVenda);
@@ -126,7 +126,7 @@ namespace WebAppCrudsPrj.DAL
             // Define comando de exclusão
             SqlCommand cmd = new SqlCommand("DELETE FROM Detalhe_Venda WHERE venda_id = @venda_id and produto_id = @produto_id", conn);
             cmd.Parameters.AddWithValue("@venda_id", venda_id);
-            cmd.Parameters.AddWithValue("@venda_id", produto_id);
+            cmd.Parameters.AddWithValue("@produto_id", produto_id);
 
             // Executa Comando
             cmd.ExecuteNonQuery();

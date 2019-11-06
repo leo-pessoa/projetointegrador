@@ -22,13 +22,13 @@ namespace WebAppCrudsPrj {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
         
         /// <summary>
-        /// Controle Label1.
+        /// Controle LabelIDA.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label LabelIDA;
         
         /// <summary>
         /// Controle ddl1.

@@ -20,7 +20,7 @@ namespace WebAppCrudsPrj
                 id = Convert.ToInt32(Session["id"]);
             }
 
-            Label1.Text = Session["id"].ToString();
+            LabelIDA.Text = Session["id"].ToString();
         }
 
 
@@ -74,8 +74,18 @@ namespace WebAppCrudsPrj
 
         }
 
-
-
-
+        protected void ObjectDataSource4_Deleted(object sender, ObjectDataSourceStatusEventArgs e)
+        {
+            int codigo;
+            Modelo.DetalheVenda aDVendas;
+            DAL.DalClassDetalheVendas aDALClassDVendas;
+            int index = Convert.ToInt32(e);
+            codigo = Convert.ToInt32(GridView2.Rows[index].Cells[0].Text);
+            aDVendas = new Modelo.DetalheVenda();
+            aDVendas.produto_id = codigo;
+            aDALClassDVendas = new DAL.DalClassDetalheVendas();
+            aDALClassDVendas.Delete(codigo, Convert.ToInt32(LabelIDA.Text));
+            GridView2.DataBind();
+        }
     }
 }

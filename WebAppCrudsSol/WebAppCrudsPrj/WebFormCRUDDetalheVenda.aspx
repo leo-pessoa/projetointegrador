@@ -13,7 +13,7 @@
                      <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DalClassVendas"></asp:ObjectDataSource>
         
             <label for="Produto"><b>Código da Venda: </b></label>
-            <asp:Label ID="Label1" runat="server"></asp:Label>
+            <asp:Label ID="LabelIDA" runat="server"></asp:Label>
         <br />
            <label for="Produto"><b>Produto</b></label><br />
         <asp:dropdownlist ID="ddl1" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nome" DataValueField="id">
@@ -29,20 +29,11 @@
 </div>
     <br />
 <div class="mostragem">
-    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource4" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource4" ForeColor="#333333" GridLines="None" >
         <AlternatingRowStyle BackColor="White" />
         <Columns>
-            <asp:TemplateField HeaderText="Produto" SortExpression="produto_id">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("produto_id") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("produto_id") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
+            <asp:BoundField DataField="produto_id" HeaderText="Produto" SortExpression="produto_id" />
             <asp:BoundField DataField="quantidadeprod" HeaderText="Quantidade" SortExpression="quantidadeprod" />
-            <asp:CommandField ShowEditButton="true" />  
-            <asp:CommandField ShowDeleteButton="true" />
         </Columns>
         <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -55,9 +46,10 @@
         <SortedDescendingCellStyle BackColor="#E9EBEF" />
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
-    <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DalClassDetalheVendas">
+    <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DalClassDetalheVendas" OnDeleted="ObjectDataSource4_Deleted">
+        
         <SelectParameters>
-            <asp:ControlParameter ControlID="Label1" Name="venda_id" PropertyName="Text" Type="Int32" />
+            <asp:ControlParameter ControlID="LabelIDA" Name="venda_id" PropertyName="Text" Type="Int32" />
         </SelectParameters>
     </asp:ObjectDataSource>
     <br />
@@ -76,7 +68,7 @@
     </asp:GridView>
     <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="SelectVtotal" TypeName="WebAppCrudsPrj.DAL.DALClassConsultas">
         <SelectParameters>
-            <asp:ControlParameter ControlID="Label1" Name="id" PropertyName="Text" Type="Int32" />
+            <asp:ControlParameter ControlID="LabelIDA" Name="id" PropertyName="Text" Type="Int32" />
         </SelectParameters>
     </asp:ObjectDataSource>
 </div>
