@@ -31,13 +31,40 @@ namespace WebAppCrudsPrj {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Controle ddl1.
+        /// Controle cliente.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl1;
+        protected global::System.Web.UI.WebControls.TextBox cliente;
+        
+        /// <summary>
+        /// Controle buttonp.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buttonp;
+        
+        /// <summary>
+        /// Controle ListBox1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        
+        /// <summary>
+        /// Controle ObjectDataSource7.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource7;
         
         /// <summary>
         /// Controle ObjectDataSource1.

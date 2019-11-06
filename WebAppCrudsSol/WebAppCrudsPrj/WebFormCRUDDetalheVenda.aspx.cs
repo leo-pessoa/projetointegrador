@@ -30,7 +30,7 @@ namespace WebAppCrudsPrj
             DAL.DalClassDetalheVendas iDALClassDet;
             try
             {
-                iDet = new Modelo.DetalheVenda(id, int.Parse(ddl1.Text), Convert.ToInt32(TextBoxQtd.Text));
+                iDet = new Modelo.DetalheVenda(id, int.Parse(ListBox1.SelectedValue.ToString()), Convert.ToInt32(TextBoxQtd.Text));
 
                 iDALClassDet = new DAL.DalClassDetalheVendas();
 
@@ -54,7 +54,7 @@ namespace WebAppCrudsPrj
             {
                 if(TextBoxQtd.Text != "")
                 {
-                    iDet = new Modelo.DetalheVenda(id, int.Parse(ddl1.Text), Convert.ToInt32(TextBoxQtd.Text));
+                    iDet = new Modelo.DetalheVenda(id, int.Parse(ListBox1.SelectedValue.ToString()), Convert.ToInt32(TextBoxQtd.Text));
 
                     iDALClassDet = new DAL.DalClassDetalheVendas();
 

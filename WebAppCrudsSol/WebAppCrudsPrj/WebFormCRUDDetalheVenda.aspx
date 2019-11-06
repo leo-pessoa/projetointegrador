@@ -15,9 +15,18 @@
             <label for="Produto"><b>Código da Venda: </b></label>
             <asp:Label ID="Label1" runat="server"></asp:Label>
         <br />
-           <label for="Produto"><b>Produto</b></label><br />
-        <asp:dropdownlist ID="ddl1" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nome" DataValueField="id">
-</asp:dropdownlist>
+<label for="cliente"><b>Selecionar Produto</b></label>
+    <asp:TextBox runat="server" ID="cliente" />
+    <asp:Button Text="Pesquisar" ID="buttonp" runat="server" />
+    <br />
+    <asp:ListBox ID="ListBox1" runat="server" DataSourceID="ObjectDataSource7" DataTextField="nome" DataValueField="id" Width="172px"></asp:ListBox>
+        <asp:ObjectDataSource ID="ObjectDataSource7" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="cliente" Name="nome" PropertyName="Text" Type="String" />
+            </SelectParameters>
+    </asp:ObjectDataSource>
+         <br />
+         <br />
             <br />
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos"></asp:ObjectDataSource>
         
