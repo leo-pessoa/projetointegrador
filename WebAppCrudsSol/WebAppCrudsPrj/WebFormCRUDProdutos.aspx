@@ -24,7 +24,7 @@
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="Código" SortExpression="id" />
                     <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
-                    <asp:BoundField DataField="valor" DataFormatString="{0:f2}" HeaderText="Valor" SortExpression="valor" />
+                    <asp:BoundField DataField="valor" DataFormatString="R$: {0:f2}" HeaderText="Valor" SortExpression="valor" />
                     <asp:BoundField DataField="descricao" HeaderText="Descrição" SortExpression="descricao" />
                     <asp:BoundField DataField="quantidade" HeaderText="Quantidade" SortExpression="quantidade" />
                     <asp:BoundField DataField="fornecedor_id" HeaderText="Código Fornecedor" SortExpression="fornecedor_id" />

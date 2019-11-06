@@ -14,8 +14,8 @@
              <Columns>
                  <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                  <asp:BoundField DataField="descricao" HeaderText="Descrição" SortExpression="descricao" />
-                 <asp:BoundField DataField="valor" HeaderText="Valor" SortExpression="valor" />
-                 <asp:BoundField DataField="quantidade" HeaderText="Quantidade" SortExpression="quantidade" />
+                 <asp:BoundField DataField="valor" HeaderText="Valor" SortExpression="valor" DataFormatString="R$: {0:f2}" />
+                 <asp:BoundField DataField="quantidade" HeaderText="Quantidade Dísponivel" SortExpression="quantidade" />
              </Columns>
              <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
