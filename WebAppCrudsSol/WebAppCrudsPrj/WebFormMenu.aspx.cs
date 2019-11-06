@@ -13,7 +13,7 @@ namespace WebAppCrudsPrj
         {
             if ((Session["log_in"] != null) && (Session["log_in"].ToString() != ""))
             {
-                LabelBoasVindas.Text = "Bem Vindo, " + Session["log_in"].ToString();
+                LabelBoasVindas.Text = "<h1>Bem Vindo, " + Session["log_in"].ToString()+"</h1>";
             }
             else
             {
