@@ -7,11 +7,25 @@ using System.Web.UI.WebControls;
 
 namespace WebAppCrudsPrj
 {
+    
     public partial class WebForm1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void buttonp_Click(object sender, EventArgs e)
+        {
+            GridView1.Visible = true;
+        }
+
+        private void cliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                
+            }
         }
     }
 }

@@ -74,18 +74,14 @@ namespace WebAppCrudsPrj
 
         }
 
-        protected void ObjectDataSource4_Deleted(object sender, ObjectDataSourceStatusEventArgs e)
+        protected void GridView2_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int codigo;
-            Modelo.DetalheVenda aDVendas;
-            DAL.DalClassDetalheVendas aDALClassDVendas;
-            int index = Convert.ToInt32(e);
-            codigo = Convert.ToInt32(GridView2.Rows[index].Cells[0].Text);
-            aDVendas = new Modelo.DetalheVenda();
-            aDVendas.produto_id = codigo;
-            aDALClassDVendas = new DAL.DalClassDetalheVendas();
-            aDALClassDVendas.Delete(codigo, Convert.ToInt32(LabelIDA.Text));
-            GridView2.DataBind();
+
+        }
+
+        protected void GridView2_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
         }
     }
 }

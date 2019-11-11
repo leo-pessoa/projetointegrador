@@ -10,6 +10,7 @@ namespace WebAppCrudsPrj.Modelo
             public int venda_id { get; set; }
             public int produto_id { get; set; }
             public int quantidadeprod { get; set; }
+            public Modelo.Produtos produto { get; set; }
 
             public DetalheVenda()
             {

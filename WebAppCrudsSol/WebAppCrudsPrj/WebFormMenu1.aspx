@@ -8,14 +8,25 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="content">
          <h1 style="color:whitesmoke">Seja Bem-Vindo, à nossa Loja!</h1>
-         <h4 style="color:whitesmoke">Nossa equipe preparou uma incrível lista de produtos disponíveis no dia de Hoje</h4>
+         <h4 style="color:whitesmoke">Pesquise aquele produtinho do seu agrado</h4>
          <br />
-         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource2" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="302px">
+         <br />
+    <asp:TextBox runat="server" ID="cliente" Width="1208px" cssclass="txtbox" Placeholder="🔍" OnKeyDown="cliente_KeyDown"/><br />
+    <asp:Button Text="Pesquisar" ID="buttonp" runat="server" OnClick="buttonp_Click" />
+    <br />
+        <asp:ObjectDataSource ID="ObjectDataSource7" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="cliente" Name="nome" PropertyName="Text" Type="String" />
+            </SelectParameters>
+    </asp:ObjectDataSource>
+         <br />
+         <br />
+         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource2" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="302px" Visible="False">
              <Columns>
-                 <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
+<asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome"></asp:BoundField>
+                 <asp:BoundField DataField="valor" HeaderText="Valor" SortExpression="valor" DataFormatString="R$ {0:f2}" />
                  <asp:BoundField DataField="descricao" HeaderText="Descrição" SortExpression="descricao" />
-                 <asp:BoundField DataField="valor" HeaderText="Valor" SortExpression="valor" DataFormatString="R$: {0:f2}" />
-                 <asp:BoundField DataField="quantidade" HeaderText="Quantidade Dísponivel" SortExpression="quantidade" />
+                 <asp:BoundField DataField="quantidade" HeaderText="Quantidade" SortExpression="quantidade" />
              </Columns>
              <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#000000" Font-Bold="True" ForeColor="White" />
@@ -29,7 +40,11 @@
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
          </asp:GridView>
          
-         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos"></asp:ObjectDataSource>
+         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos">
+             <SelectParameters>
+                 <asp:ControlParameter ControlID="cliente" Name="nome" PropertyName="Text" Type="String" />
+             </SelectParameters>
+         </asp:ObjectDataSource>
          
      </div>
 </asp:Content>
