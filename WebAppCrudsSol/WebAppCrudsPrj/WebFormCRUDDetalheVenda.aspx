@@ -8,8 +8,10 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="content">
-        <div class="container">
+    <div class="content2">
+        <div class="container2">
+            
+
                      <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DalClassVendas"></asp:ObjectDataSource>
         
             <label for="Produto"><b>Código da Venda: </b></label>
@@ -25,20 +27,21 @@
                 <asp:ControlParameter ControlID="cliente" Name="nome" PropertyName="Text" Type="String" />
             </SelectParameters>
     </asp:ObjectDataSource>
-         <br />
-         <br />
             <br />
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos"></asp:ObjectDataSource>
         
               <label for="Quantidade"><b>Quantidade</b></label><br />
                 <asp:TextBox ID="TextBoxQtd" runat="server" ></asp:TextBox>
             <asp:Button ID="Button1" runat="server" Text="Próximo Produto" OnClick="Button1_Click" />
-            <asp:Button ID="Button2" runat="server" Text="Finalizar Venda" OnClick="Button2_Click" />
+            
+            <br />
+     
     </div>
-</div>
-    <br />
-<div class="mostragem">
-    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource4" ForeColor="#333333" GridLines="None" OnRowDeleting="GridView2_RowDeleting" OnRowUpdating="GridView2_RowUpdating" >
+
+
+    <div class="container2">
+
+    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource4" ForeColor="#333333" GridLines="None" OnRowDeleting="GridView2_RowDeleting" OnRowUpdating="GridView2_RowUpdating" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="172px">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:TemplateField HeaderText="Produto" SortExpression="produto_id">
@@ -60,16 +63,16 @@
             <asp:CommandField ShowEditButton="True" />
             <asp:CommandField ShowDeleteButton="True" />
         </Columns>
-        <EditRowStyle BackColor="#2461BF" />
-        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#EFF3FB" />
-        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-        <SortedAscendingCellStyle BackColor="#F5F7FB" />
-        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-        <SortedDescendingCellStyle BackColor="#E9EBEF" />
-        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+        <EditRowStyle BackColor="#999999" />
+        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#E9E7E2" />
+        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+        <SortedDescendingCellStyle BackColor="#FFFDF8" />
+        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
     <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DalClassDetalheVendas">
         
@@ -77,11 +80,12 @@
             <asp:ControlParameter ControlID="LabelIDA" Name="venda_id" PropertyName="Text" Type="Int32" />
         </SelectParameters>
     </asp:ObjectDataSource>
-    <asp:GridView ID="GridView3" runat="server" CellPadding="4" DataSourceID="ObjectDataSource3" ForeColor="#333333" GridLines="None">
+        <br />
+    <asp:GridView ID="GridView3" runat="server" CellPadding="4" DataSourceID="ObjectDataSource3" ForeColor="#333333" GridLines="None"  CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="372px">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
         <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
         <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
@@ -96,7 +100,10 @@
         </SelectParameters>
     </asp:ObjectDataSource>
     <br />
-</div>
-
+                        <br />
+                <asp:Button ID="Button2" runat="server" Text="Finalizar Venda" OnClick="Button2_Click" />
+                <br />
+    </div>
+            </div>
 
     </asp:Content>

@@ -39,7 +39,11 @@ a.button2 {
 .content {
     margin: 5% 1% 200px 200px;
 }
-
+.content2 {
+    margin: 20% 1% 200px 50px;
+    display: flex;
+    flex-direction: column;
+}
 
 nav{
     background-color:black;
@@ -146,6 +150,20 @@ body {
     transform: translate(-50%, -50%);
     border: 1px solid #ccc;
     border-radius: 10px;
+    background: white;
+    -webkit-box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
+    -moz-box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
+    box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
+}
+.container2 {
+    padding: 20px;
+    width: 900px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: relative;
     background: white;
     -webkit-box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
     -moz-box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);

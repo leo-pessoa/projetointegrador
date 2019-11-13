@@ -84,7 +84,7 @@ namespace WebAppCrudsPrj
             int codigo;
             DAL.DALClassConsultas aDalCon;
             aDalCon = new DAL.DALClassConsultas();
-            int index = Convert.ToInt32(e);
+            int index = Convert.ToInt32(GridView2.DataKeys[e.RowIndex].Value.ToString());
             codigo = Convert.ToInt32(GridView2.Rows[index].Cells[0].Text);
             aDalCon.UpdateDVenda(int.Parse(LabelIDA.Text), codigo, int.Parse(TextBoxQtd.Text));
 
