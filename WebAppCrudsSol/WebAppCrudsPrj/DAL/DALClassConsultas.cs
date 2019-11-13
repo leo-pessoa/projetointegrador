@@ -79,5 +79,16 @@ namespace WebAppCrudsPrj.DAL
 
             return ds;
         }
+
+        public void UpdateDVenda(int vendaid, int produtoid, int quantidadeprod)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = ("UPDATE Detalhe_Venda SET quantidadeprod = "+quantidadeprod+" WHERE venda_id = " + vendaid + " AND produto_id = " + produtoid);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+        }
     }
 }

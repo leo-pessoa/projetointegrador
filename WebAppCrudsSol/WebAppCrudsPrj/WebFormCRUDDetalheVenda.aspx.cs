@@ -81,6 +81,10 @@ namespace WebAppCrudsPrj
 
         protected void GridView2_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            DAL.DALClassConsultas aDalCon;
+            aDalCon = new DAL.DALClassConsultas();
+            aDalCon.UpdateDVenda(//produto, quantidade lá e id da venda);
+
 
         }
     }
