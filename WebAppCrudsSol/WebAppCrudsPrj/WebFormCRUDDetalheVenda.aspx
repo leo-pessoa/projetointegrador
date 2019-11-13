@@ -49,7 +49,14 @@
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("produto_id") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="quantidadeprod" HeaderText="Quantidade" SortExpression="quantidadeprod" />
+            <asp:TemplateField HeaderText="Quantidade" SortExpression="quantidadeprod">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBoxQTD" runat="server" Text='<%# Bind("quantidadeprod") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("quantidadeprod") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:CommandField ShowEditButton="True" />
             <asp:CommandField ShowDeleteButton="True" />
         </Columns>

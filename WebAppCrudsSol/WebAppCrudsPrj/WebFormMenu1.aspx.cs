@@ -19,13 +19,5 @@ namespace WebAppCrudsPrj
         {
             GridView1.Visible = true;
         }
-
-        private void cliente_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                
-            }
-        }
     }
 }

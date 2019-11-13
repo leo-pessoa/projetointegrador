@@ -81,9 +81,12 @@ namespace WebAppCrudsPrj
 
         protected void GridView2_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            int codigo;
             DAL.DALClassConsultas aDalCon;
             aDalCon = new DAL.DALClassConsultas();
-            aDalCon.UpdateDVenda(//produto, quantidade lá e id da venda);
+            int index = Convert.ToInt32(e);
+            codigo = Convert.ToInt32(GridView2.Rows[index].Cells[0].Text);
+            aDalCon.UpdateDVenda(int.Parse(LabelIDA.Text), codigo, int.Parse(TextBoxQtd.Text));
 
 
         }
