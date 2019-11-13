@@ -76,7 +76,7 @@ namespace WebAppCrudsPrj
 
         protected void GridView2_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            //msm codigo que o de baixo, porém com dalclassdetalhevendas.delete
         }
 
         protected void GridView2_RowUpdating(object sender, GridViewUpdateEventArgs e)
