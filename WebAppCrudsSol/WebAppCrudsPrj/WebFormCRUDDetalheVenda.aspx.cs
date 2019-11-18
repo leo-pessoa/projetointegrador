@@ -73,22 +73,6 @@ namespace WebAppCrudsPrj
             }
 
         }
-
-        protected void GridView2_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            //msm codigo que o de baixo, porém com dalclassdetalhevendas.delete
-        }
-
-        protected void GridView2_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            int codigo;
-            DAL.DALClassConsultas aDalCon;
-            aDalCon = new DAL.DALClassConsultas();
-            int index = Convert.ToInt32(GridView2.DataKeys[e.RowIndex].Value.ToString());
-            codigo = Convert.ToInt32(GridView2.Rows[index].Cells[0].Text);
-            aDalCon.UpdateDVenda(int.Parse(LabelIDA.Text), codigo, int.Parse(TextBoxQtd.Text));
-
-
-        }
+        
     }
 }

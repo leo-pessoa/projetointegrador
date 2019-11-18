@@ -39,19 +39,14 @@ namespace WebAppCrudsPrj.DAL
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void Update(Modelo.DetalheVenda obj)
         {
-            // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
-            // Abre conexão com o banco de dados
             conn.Open();
-            // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
-            // Define comando de exclusão
             SqlCommand cmd = new SqlCommand("UPDATE Detalhe_Venda SET quantidadeprod = @quantidadeprod  WHERE venda_id = @venda_id AND produto_id = @produto_id", conn);
             cmd.Parameters.AddWithValue("@produto_id", obj.produto_id);
             cmd.Parameters.AddWithValue("@venda_id", obj.venda_id);
             cmd.Parameters.AddWithValue("@quantidadeprod", obj.quantidadeprod);
-
-            // Executa Comando
+            
             cmd.ExecuteNonQuery();
         }
 

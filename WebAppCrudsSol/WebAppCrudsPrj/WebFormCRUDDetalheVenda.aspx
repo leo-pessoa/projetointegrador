@@ -41,26 +41,18 @@
 
     <div class="container2">
 
-    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource4" ForeColor="#333333" GridLines="None" OnRowDeleting="GridView2_RowDeleting" OnRowUpdating="GridView2_RowUpdating" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="172px">
+    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource4" ForeColor="#333333" GridLines="None" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="172px" DataKeyNames="produto_id">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:TemplateField HeaderText="Produto" SortExpression="produto_id">
                 <EditItemTemplate>
-                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("produto_id") %>'></asp:Label>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("produto_id") %>'></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("produto_id") %>'></asp:Label>
+                    <asp:Label ID="LabelPID" runat="server" Text='<%# Bind("produto_id") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Quantidade" SortExpression="quantidadeprod">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBoxQTD" runat="server" Text='<%# Bind("quantidadeprod") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("quantidadeprod") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:CommandField ShowEditButton="True" />
+            <asp:BoundField DataField="quantidadeprod" HeaderText="Quantidade" SortExpression="quantidadeprod" />
             <asp:CommandField ShowDeleteButton="True" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
@@ -74,11 +66,18 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-    <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DalClassDetalheVendas">
+    <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DalClassDetalheVendas" DeleteMethod="Delete">
+        
+        <DeleteParameters>
+            <asp:ControlParameter ControlID="LabelIDA" Name="venda_id" PropertyName="Text" Type="Int32" />
+            <asp:ControlParameter ControlID="GridView2" Name="produto_id" PropertyName="SelectedValue" Type="Int32" />
+        </DeleteParameters>
         
         <SelectParameters>
             <asp:ControlParameter ControlID="LabelIDA" Name="venda_id" PropertyName="Text" Type="Int32" />
         </SelectParameters>
+        <UpdateParameters>
+        </UpdateParameters>
     </asp:ObjectDataSource>
         <br />
     <asp:GridView ID="GridView3" runat="server" CellPadding="4" DataSourceID="ObjectDataSource3" ForeColor="#333333" GridLines="None"  CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="372px">

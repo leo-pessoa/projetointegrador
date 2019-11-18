@@ -183,7 +183,7 @@ namespace WebAppCrudsPrj.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "SELECT * FROM Produtos WHERE nome like '%" + nome + "%' ";
+            cmd.CommandText = "SELECT * FROM Produtos WHERE nome like '%" + nome + "%' AND quantidade != 0 ";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
