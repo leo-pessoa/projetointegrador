@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -37,6 +38,10 @@ namespace WebAppCrudsPrj
                 iDALClassDet.Insert(iDet);
 
                 Response.Redirect("~\\WebFormCRUDDetalheVenda.aspx");
+
+                GridView99.Visible = true;
+                GridView3.Visible = true;
+
             }
             catch
             {
@@ -44,7 +49,6 @@ namespace WebAppCrudsPrj
             }
 
         }
-
 
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -73,6 +77,10 @@ namespace WebAppCrudsPrj
             }
 
         }
-        
+
+        protected void GridView2_RowDeleted(object sender, GridViewDeletedEventArgs e)
+        {
+            Response.Redirect("~\\WebFormCRUDDetalheVenda.aspx");
+        }
     }
 }

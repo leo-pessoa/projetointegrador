@@ -41,10 +41,10 @@
 
     <div class="container2">
 
-    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource4" ForeColor="#333333" GridLines="None" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="172px" DataKeyNames="produto_id">
+    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource4" ForeColor="#333333" GridLines="None" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="172px" DataKeyNames="produto_id" OnRowDeleted="GridView2_RowDeleted" >
         <AlternatingRowStyle BackColor="White" />
         <Columns>
-            <asp:TemplateField HeaderText="Produto" SortExpression="produto_id">
+            <asp:TemplateField HeaderText="Código do Produto" SortExpression="produto_id">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("produto_id") %>'></asp:TextBox>
                 </EditItemTemplate>
@@ -52,7 +52,6 @@
                     <asp:Label ID="LabelPID" runat="server" Text='<%# Bind("produto_id") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="quantidadeprod" HeaderText="Quantidade" SortExpression="quantidadeprod" />
             <asp:CommandField ShowDeleteButton="True" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
@@ -79,6 +78,25 @@
         <UpdateParameters>
         </UpdateParameters>
     </asp:ObjectDataSource>
+        <br />
+        <asp:GridView ID="GridView99" runat="server" CellPadding="4" DataSourceID="ObjectDataSource5" ForeColor="#333333" GridLines="None" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="172px">
+            <AlternatingRowStyle BackColor="White" />
+            <EditRowStyle BackColor="#999999" />
+            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#E9E7E2" />
+            <SortedAscendingHeaderStyle BackColor="#506C8C" />
+            <SortedDescendingCellStyle BackColor="#FFFDF8" />
+            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+        </asp:GridView>
+        <asp:ObjectDataSource ID="ObjectDataSource5" runat="server" SelectMethod="SelectDetalhe2" TypeName="WebAppCrudsPrj.DAL.DALClassConsultas">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="LabelIDA" Name="id" PropertyName="Text" Type="Int32" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
         <br />
     <asp:GridView ID="GridView3" runat="server" CellPadding="4" DataSourceID="ObjectDataSource3" ForeColor="#333333" GridLines="None"  CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="372px">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />

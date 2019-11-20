@@ -43,6 +43,19 @@ namespace WebAppCrudsPrj.DAL
             return ds;
         }
 
+        public DataSet SelectDetalhe2(int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = ("SELECT	dv.produto_id AS Código, p.nome AS Produto, dv.quantidadeprod AS Quantidade, p.valor AS Valor_Unitário, SUM(p.valor * dv.quantidadeprod) AS Valor_Total  FROM Detalhe_Venda dv INNER JOIN Venda v ON v.id = dv.venda_id INNER JOIN Produtos p ON p.id = dv.produto_id WHERE dv.venda_id = " + id + " GROUP BY dv.produto_id, p.nome, dv.quantidadeprod, p.valor");
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            return ds;
+        }
+
         public DataSet SelectVtotal(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
