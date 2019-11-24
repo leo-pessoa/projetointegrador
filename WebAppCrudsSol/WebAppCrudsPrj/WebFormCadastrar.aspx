@@ -22,9 +22,6 @@
         <div class="container">
             <asp:Label ID="LabelMsgErro" runat="server" ForeColor="Red"></asp:Label>
 
-            <label for="id"  ><b>Código</b></label>
-                <asp:TextBox ID="TextBoxId" runat="server"></asp:TextBox>
-
             <label for="nome"  ><b>Nome</b></label>
                 <asp:TextBox ID="TextBoxNome" runat="server"></asp:TextBox>
 

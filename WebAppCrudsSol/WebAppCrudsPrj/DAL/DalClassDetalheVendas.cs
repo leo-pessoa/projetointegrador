@@ -112,18 +112,13 @@ namespace WebAppCrudsPrj.DAL
         [DataObjectMethod(DataObjectMethodType.Delete)]
         public void Delete(int venda_id, int produto_id)
         {
-            // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
-            // Abre conexão com o banco de dados
             conn.Open();
-            // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
-            // Define comando de exclusão
             SqlCommand cmd = new SqlCommand("DELETE FROM Detalhe_Venda WHERE venda_id = @venda_id and produto_id = @produto_id", conn);
             cmd.Parameters.AddWithValue("@venda_id", venda_id);
             cmd.Parameters.AddWithValue("@produto_id", produto_id);
-
-            // Executa Comando
+            
             cmd.ExecuteNonQuery();
 
         }
