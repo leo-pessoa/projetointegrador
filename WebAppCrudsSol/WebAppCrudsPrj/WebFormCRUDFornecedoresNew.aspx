@@ -22,13 +22,13 @@
               <p>Preencha todos os campos</p>
 
               <label for="name"><b>Nome</b></label>
-               <asp:TextBox ID="TextBoxNome" runat="server"></asp:TextBox>
+               <asp:TextBox ID="TextBoxNome" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
           
               <label for="email"><b>Email </b></label>
-                <asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBoxEmail" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
 
               <label for="telefone"><b>Telefone </b></label>
-                <asp:TextBox ID="TextBoxTelefone" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBoxTelefone" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
 
       
       

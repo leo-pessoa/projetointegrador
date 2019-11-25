@@ -11,8 +11,8 @@
          <h4 style="color:whitesmoke">Pesquise aquele produtinho do seu agrado</h4>
          <br />
          <br />
-    <asp:TextBox runat="server" ID="cliente" Width="1208px" cssclass="txtbox" Placeholder="🔍" OnKeyDown="cliente_KeyDown"/><br />
-    <asp:Button Text="Pesquisar" ID="buttonp" runat="server" OnClick="buttonp_Click" Visible="False" />
+    <asp:TextBox runat="server" ID="cliente" Width="920px" cssclass="txtbox" Placeholder="🔍" OnKeyDown="cliente_KeyDown"/><br />
+    <asp:Button Text="Pesquisar" ID="buttonp" runat="server" OnClick="buttonp_Click" Visible="True" />
     <br />
         <asp:ObjectDataSource ID="ObjectDataSource7" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos">
             <SelectParameters>

@@ -30,7 +30,14 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="data_venda" HeaderText="Data" SortExpression="data_venda" DataFormatString="{0:d}" />
-                <asp:BoundField DataField="usuario_id" HeaderText="Cliente" SortExpression="usuario_id" />
+                <asp:TemplateField HeaderText="Cliente" SortExpression="usuario_id">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("usuario_id") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("usuario_id") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:ButtonField CommandName="Finalizar" Text="Finalizar dívida" />
                 <asp:ButtonField CommandName="Detalhar" Text="Detalhar" />
             </Columns>

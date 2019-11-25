@@ -25,16 +25,16 @@
 
          
                          <label for="name"><b>Nome</b></label>
-            <asp:TextBox ID="TextBoxNome" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBoxNome" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
 
             <label for="value"><b>Valor</b></label>
-           <asp:TextBox ID="TextBoxValor" runat="server"></asp:TextBox>
+           <asp:TextBox ID="TextBoxValor" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
           
           <label for="desc"><b>Descrição </b></label>
-            <asp:TextBox ID="TextBoxDesc" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBoxDesc" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
 
             <label for="quantity"><b>Quantidade </b></label>
-            <asp:TextBox ID="TextBoxQtd" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBoxQtd" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
       
             <label for="fornecedor"><b>Fornecedor</b></label>
             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nome" DataValueField="id"></asp:DropDownList>

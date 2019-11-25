@@ -18,13 +18,13 @@
           <p>Preencha todos os campos</p>
          
             <label for="name"><b>Nome</b></label>
-           <asp:TextBox ID="TextBoxNome" runat="server"></asp:TextBox>
+           <asp:TextBox ID="TextBoxNome" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
           
           <label for="cpf"><b>CPF</b></label>
-            <asp:TextBox ID="TextBoxCPF" runat="server" MaxLength="11"></asp:TextBox>
+            <asp:TextBox ID="TextBoxCPF" runat="server" MaxLength="11" AutoCompleteType="Disabled"></asp:TextBox>
       
            <label for="profile"><b>Perfil</b></label>
-           <asp:TextBox ID="TextBoxPerfil" runat="server" ReadOnly="True">cliente</asp:TextBox>
+           <asp:TextBox ID="TextBoxPerfil" runat="server" ReadOnly="True" AutoCompleteType="Disabled">cliente</asp:TextBox>
       
       
           <div class="clearfix">

@@ -33,7 +33,7 @@ namespace WebAppCrudsPrj
             Session["msgErro"] = "";
 
             DAL.DALClassUsuarios aDALClassUsuarios = new DAL.DALClassUsuarios();
-            Modelo.Usuarios aUsuario = new Modelo.Usuarios(int.Parse(TextBoxId.Text), TextBoxNome.Text, TextBoxLogin.Text, TextBoxSenha.Text, TextBoxPerfil.Text);
+            Modelo.Usuarios aUsuario = new Modelo.Usuarios(0, TextBoxNome.Text, TextBoxLogin.Text, TextBoxSenha.Text, TextBoxPerfil.Text);
             aDALClassUsuarios.Insert(aUsuario);
             Response.Redirect("~\\WebFormCadastrar.aspx");
 
