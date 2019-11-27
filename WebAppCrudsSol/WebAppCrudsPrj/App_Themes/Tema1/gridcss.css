@@ -20,6 +20,7 @@ button, html input[type=button], input[type=reset], input[type=submit] {
     font-size: 16px;
     font-family: 'Verdana';
     color: white;
+    box-sizing: border-box;
     text-decoration: none;
     padding: 5px 8px 5px;
     border-radius: 7%;
@@ -42,6 +43,20 @@ button, html input[type=button], input[type=reset], input[type=submit] {
         color: #DDDDDD;
         border-color: #DDDDDD;
     }
+
+.butao a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Verdana', 'Arial';
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10%;
+}
+
+.butao a:hover {
+    color: lightgray;
+}
 
 @media all and (max-width:30em) {
      a.button2 {
