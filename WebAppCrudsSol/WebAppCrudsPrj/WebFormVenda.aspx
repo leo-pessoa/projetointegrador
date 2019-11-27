@@ -6,11 +6,12 @@
     <h1>Nova Venda</h1>
     <p>Preencha todos os campos</p>
         <br />
-          <label for="cliente"><b>Selecionar Cliente</b></label>
+          <label for="cliente"><b>Procurar Cliente</b></label>
     <asp:TextBox runat="server" ID="cliente" />
-    <asp:Button Text="Pesquisar" ID="buttonp" runat="server" />
+    <asp:Button Text="Pesquisar" ID="buttonp" runat="server" style="margin-bottom: 10px;"/>
     <br />
-    <asp:ListBox ID="ListBox1" runat="server" DataSourceID="ObjectDataSource7" DataTextField="nome" DataValueField="id" Width="172px"></asp:ListBox>
+    <label><b>Selecione um Cliente</b></label>
+    <asp:ListBox ID="ListBox1" runat="server" DataSourceID="ObjectDataSource7" DataTextField="nome" DataValueField="id" Width="100%"></asp:ListBox>
         <asp:ObjectDataSource ID="ObjectDataSource7" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassClientes">
             <SelectParameters>
                 <asp:ControlParameter ControlID="cliente" Name="nome" PropertyName="Text" Type="String" />
