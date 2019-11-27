@@ -14,9 +14,9 @@ namespace WebAppCrudsPrj
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((Session["msgErro"] != null) && (Session["msgErro"].ToString() != ""))
+            if ((Session["msgErro1"] != null) && (Session["msgErro1"].ToString() != ""))
             {
-                LabelMsgErro.Text = Session["msgErro"].ToString();
+                LabelMsgErro2.Text = Session["msgErro1"].ToString();
             }
         }
 
@@ -29,8 +29,12 @@ namespace WebAppCrudsPrj
             List<Modelo.Clientes> aListCPF = aDALCPF.Select(cpfinfo);
             if (aListCPF.Count == 0)
             {
-                Session["msgErro"] = "Usuário não cadastrado";
+                Session["msgErro1"] = "Cliente não cadastrado";
                 Response.Redirect("~\\WebFormConsultaCPF.aspx");
+            }
+            else
+            {
+                Session["msgErro1"] = "";
             }
 
         }

@@ -7,11 +7,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="content">
-         <h1 style="color:whitesmoke">Seja Bem-Vindo, à nossa Loja!</h1>
+         <h1 style="color:whitesmoke">Seja Bem-Vindo à nossa Loja!</h1>
          <h4 style="color:whitesmoke">Pesquise aquele produtinho do seu agrado</h4>
          <br />
          <br />
-    <asp:TextBox runat="server" ID="cliente" Width="920px" cssclass="txtbox" Placeholder="🔍" OnKeyDown="cliente_KeyDown"/><br />
+    <asp:TextBox runat="server" ID="cliente" Width="80%" cssclass="txtbox" Placeholder="🔍" OnKeyDown="cliente_KeyDown"/><br />
     <asp:Button Text="Pesquisar" ID="buttonp" runat="server" OnClick="buttonp_Click" Visible="True" />
     <br />
         <asp:ObjectDataSource ID="ObjectDataSource7" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassProdutos">

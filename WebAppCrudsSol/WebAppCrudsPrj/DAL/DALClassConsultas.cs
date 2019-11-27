@@ -69,6 +69,19 @@ namespace WebAppCrudsPrj.DAL
             return ds;
         }
 
+        public DataSet SelectLogin(String login)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = ("SELECT  nome FROM Usuario WHERE log_in = '"+login+"'");
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            return ds;
+        }
+
         public void UpdateDivida(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);

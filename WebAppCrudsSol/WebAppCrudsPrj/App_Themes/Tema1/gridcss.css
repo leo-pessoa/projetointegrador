@@ -12,7 +12,20 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 
-a.button2 {
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    background-color: #757575;
+    font-size: 16px;
+    font-family: 'Verdana';
+    color: white;
+    text-decoration: none;
+    border: none;
+    padding: 5px 8px 5px;
+    border-radius: 7%;
+}
+
+    a .button2 {
     display: inline-block;
     padding: 0.5em 3em;
    border: 0.16em solid #FFFFFF;
