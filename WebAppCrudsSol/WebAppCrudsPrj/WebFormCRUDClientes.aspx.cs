@@ -20,8 +20,8 @@ namespace WebAppCrudsPrj
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
-            //try
-            //{
+            try
+            {
                 if (e.CommandName == "Editar")
                 {
                     string codigo;
@@ -34,11 +34,11 @@ namespace WebAppCrudsPrj
 
                     Response.Redirect("~\\WebFormCRUDClientesEdit.aspx");
                 }
-            //}
-            //catch
-            //{
-            //    ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
-            //}
+            }
+            catch
+            {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
+            }
         }
     }
 }

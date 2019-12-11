@@ -27,13 +27,11 @@ namespace WebAppCrudsPrj
                 Response.Redirect("~\\WebFormLogin.aspx");
             }
             Modelo.Usuarios aUsuario = aListUsuarios[0];
-            // Valida Senha
             if (aUsuario.senha != TextBoxSenha.Text)
             {
                 Session["msgErro"] = "Senha Inválida";
                 Response.Redirect("~\\WebFormLogin.aspx");
             }
-            // Salva usuário na sessão
             Session["msgErro"] = "";
             Session["log_in"] = aUsuario.log_in;
             Response.Redirect("~\\WebFormMenu.aspx");

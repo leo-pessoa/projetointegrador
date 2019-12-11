@@ -22,8 +22,8 @@ namespace WebAppCrudsPrj
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            //try
-            //{
+            try
+            {
                 Modelo.Fornecedores iFornecedores;
                 DAL.DALClassFornecedores iDALClassFornecedores;
 
@@ -39,12 +39,12 @@ namespace WebAppCrudsPrj
 
                 Response.Redirect("~\\WebFormCRUDFornecedores.aspx");
 
-            //}
+            }
 
-            //catch
-            //{
-            //    ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
-            //}
+            catch
+           {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "none", "ErroTamanhoExagerado()", true);
+            }
 
 
         }
