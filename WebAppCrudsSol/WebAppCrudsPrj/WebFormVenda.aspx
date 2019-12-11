@@ -6,11 +6,12 @@
     <h1>Nova Venda</h1>
     <p>Preencha todos os campos</p>
         <br />
-          <label for="cliente"><b>Selecionar Cliente</b></label>
+          <label for="cliente"><b>Procurar Cliente</b></label>
     <asp:TextBox runat="server" ID="cliente" />
-    <asp:Button Text="Pesquisar" ID="buttonp" runat="server" />
+    <asp:Button Text="Pesquisar" ID="buttonp" runat="server" style="margin-bottom: 10px;"/>
     <br />
-    <asp:ListBox ID="ListBox1" runat="server" DataSourceID="ObjectDataSource7" DataTextField="nome" DataValueField="id" Width="172px"></asp:ListBox>
+    <label><b>Selecione um Cliente</b></label>
+    <asp:ListBox ID="ListBox1" runat="server" DataSourceID="ObjectDataSource7" DataTextField="nome" DataValueField="id" Width="100%"></asp:ListBox>
         <asp:ObjectDataSource ID="ObjectDataSource7" runat="server" SelectMethod="Select" TypeName="WebAppCrudsPrj.DAL.DALClassClientes">
             <SelectParameters>
                 <asp:ControlParameter ControlID="cliente" Name="nome" PropertyName="Text" Type="String" />
@@ -19,10 +20,10 @@
          <br />
         
          
-    <label for="pago"><b>Pago</b></label><br />
+    <label for="pago"><b>Pagamento</b></label><br />
     <asp:DropDownList ID="DropDownList1" runat="server">
-        <asp:ListItem Value="nPago">Não</asp:ListItem>
-        <asp:ListItem Value="Pago">Sim</asp:ListItem>
+        <asp:ListItem Value="nPago">A Prazo</asp:ListItem>
+        <asp:ListItem Value="Pago">Pago</asp:ListItem>
     </asp:DropDownList>
     <br />
         <label for="data"><b>Data</b></label><br />

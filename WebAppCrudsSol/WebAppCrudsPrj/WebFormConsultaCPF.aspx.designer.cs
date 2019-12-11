@@ -13,13 +13,13 @@ namespace WebAppCrudsPrj {
     public partial class WebFormConsultaCPF {
         
         /// <summary>
-        /// Controle LabelMsgErro.
+        /// Controle LabelMsgErro2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMsgErro;
+        protected global::System.Web.UI.WebControls.Label LabelMsgErro2;
         
         /// <summary>
         /// Controle LabelCa.

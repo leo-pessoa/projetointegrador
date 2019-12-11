@@ -12,7 +12,21 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 
-a.button2 {
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    background-color: #757575;
+    border: 2px solid #919191;
+    font-size: 16px;
+    font-family: 'Verdana';
+    color: white;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 5px 8px 5px;
+    border-radius: 7%;
+}
+
+    a .button2 {
     display: inline-block;
     padding: 0.5em 3em;
    border: 0.16em solid #FFFFFF;
@@ -29,6 +43,20 @@ a.button2 {
         color: #DDDDDD;
         border-color: #DDDDDD;
     }
+
+.butao a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Verdana', 'Arial';
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10%;
+}
+
+.butao a:hover {
+    color: lightgray;
+}
 
 @media all and (max-width:30em) {
      a.button2 {
@@ -109,8 +137,12 @@ body {
     font-weight: bold;
 }
 
+label{
+    margin-top: 5px;
+}
+
     .mydatagrid a:hover  {
-        background-color: ;
+        background-color: none;
         color: #000;
     }
 

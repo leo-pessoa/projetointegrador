@@ -13,7 +13,9 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
                 <div class="content">
-                    <a href="WebFormCRUDFornecedoresNew.aspx" class="button2">Novo Fornecedor</a>
+                    <div class="butao">
+                        <a href="WebFormCRUDFornecedoresNew.aspx" >Novo Fornecedor</a>
+                    </div>
                     <br />
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource2" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand" CssClass="mydatagrid" PagerStyle-CssClass="pager"
  HeaderStyle-CssClass="header" RowStyle-CssClass="rows">

@@ -12,7 +12,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div class="content">
-            <a href="WebFormCRUDClientesNew.aspx" class="button2">Novo Cliente</a>
+            <div class="butao">
+                <a href="WebFormCRUDClientesNew.aspx" >Novo Cliente</a>
+            </div>
             <br />
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows">
                 <AlternatingRowStyle BackColor="White" />

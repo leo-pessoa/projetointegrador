@@ -11,9 +11,13 @@ namespace WebAppCrudsPrj
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            DAL.DALClassConsultas aDALClassConsultas;
+
             if ((Session["log_in"] != null) && (Session["log_in"].ToString() != ""))
             {
-                LabelBoasVindas.Text = "<h1>Bem Vindo, " + Session["log_in"].ToString()+"</h1>";
+                aDALClassConsultas = new DAL.DALClassConsultas();
+                string nomelogin = aDALClassConsultas.SelectLogin(Session["log_in"].ToString()).Tables[0].Rows[0][0].ToString();
+                LabelBoasVindas.Text = "<h1>Bem Vindo, " + nomelogin +"</h1>";
             }
             else
             {
